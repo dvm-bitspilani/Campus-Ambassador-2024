@@ -1,0 +1,67 @@
+.home {
+  height: 100svh;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+}
+.home-register {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  position: relative;
+  z-index: 2;
+}
+.home-text {
+  font-size: 2.25rem;
+  line-height: normal;
+  background: linear-gradient(90deg, #8261fc 0%, #5bb2ff 102.7%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.home-register button {
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background: #7855ef;
+  padding: 0.5rem 4rem;
+  outline: none;
+  font-size: 1.75rem;
+  color: #fff;
+  font-family: "Visby Semibold";
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.register-container{
+    height: 100%;
+    width: 100%;
+}
+.space-station {
+  mix-blend-mode: hard-light;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scale: 0.75;
+  z-index: 1;
+}
+.left-satellite {
+  position: absolute;
+  left: -3%;
+  top: 15%;
+  z-index: 1;
+}
+.right-satellite {
+  position: absolute;
+  right: 0;
+  top: 10%;
+  z-index: 1;
+}
