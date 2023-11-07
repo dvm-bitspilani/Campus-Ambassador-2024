@@ -145,9 +145,7 @@
 }
 body{
   background: url(../public/bg.jpg);
-  background-size: cover;
-  background-repeat: repeat-y;
-  /* mix-blend-mode: hard-light; */
+  background-repeat: repeat;
   width: 100vw;
   overflow-x: hidden;
 }

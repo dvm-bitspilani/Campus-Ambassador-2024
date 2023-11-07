@@ -16,8 +16,9 @@
   font-size: 3.5rem;
 }
 .about-heading h1 span {
-  text-decoration: underline;
+  /* text-decoration: underline; */
   color: #7855ef;
+  border-bottom: 4px solid #7855ef;
 }
 .about-desc {
   margin-top: 2rem;

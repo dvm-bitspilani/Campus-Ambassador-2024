@@ -1,0 +1,70 @@
+.contact {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.contact-heading span {
+  color: #fafafa;
+  font-family: "Visby Bold";
+  font-size: 4rem;
+  border-bottom: 4px solid #fafafa;
+}
+.contact-container {
+  width: 75%;
+  margin-top: 3rem;
+  border-radius: 11.339px;
+  background: #181e21;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 6rem;
+  gap: 6rem;
+}
+.contact-info {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  font-family: "Visby Light";
+  font-size: 1.75rem;
+  text-align: left;
+  width: 100%;
+}
+.contact-info-name {
+  width: 100%;
+}
+.contact-info-desc {
+  width: 100%;
+  color: #959da5;
+}
+.contact-phone {
+  margin-bottom: 0.5rem;
+}
+.contact-phone a,
+.contact-mail a {
+  text-decoration: none;
+}
+.contact-desc {
+  color: #7855ef;
+  font-family: "Visby Light";
+  font-size: 1.5rem;
+  text-decoration-line: underline;
+  cursor: pointer;
+}
+@media (max-width: 1300px) {
+  .contact-heading span {
+    font-size: 3.5rem;
+  }
+  .contact-container {
+    scale: 0.85;
+    margin-top: 0rem;
+  }
+  .contact-info{
+    font-size: 1.25rem;
+  }
+  .contact-desc{
+    font-size: 1rem;
+  }
+}
