@@ -3,9 +3,10 @@
   justify-content: space-between;
   padding: 2rem 4rem;
   align-items: center;
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
+  z-index: 100;
 }
 .nav-heading {
   font-family: "Visby Semibold";

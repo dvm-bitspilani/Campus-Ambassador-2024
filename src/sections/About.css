@@ -1,0 +1,51 @@
+.about {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.about-content {
+    margin-top: -10rem;
+  width: 60%;
+}
+.about-heading h1 {
+  color: #fafafa;
+  font-family: "Visby Bold";
+  font-size: 3.5rem;
+}
+.about-heading h1 span {
+  text-decoration: underline;
+  color: #7855ef;
+}
+.about-desc {
+  margin-top: 2rem;
+  color: #f5f5f5;
+  text-align: justify;
+  font-family: "Visby Light";
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 35px; /* 137.5% */
+  letter-spacing: 1.28px;
+}
+.about-surface {
+  position: absolute;
+  bottom: -10px;
+}
+.about-rover{
+    scale: .75;
+    position: absolute;
+    bottom: 0px;
+    right: 10vw;
+}
+@media(max-width: 1300px){
+  .about-heading h1{
+    font-size: 3rem;
+  }
+  .about-desc{
+    font-size: 1.25rem;
+    line-height: 30px;
+  }
+}

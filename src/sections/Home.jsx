@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Home.css";
 import SpaceStation from "../../public/SpaceStation.png";
 import LeftSatellite from "../../public/LeftSatellite.png";
@@ -16,12 +16,16 @@ const Home = () => {
   const regControls = useAnimation();
   const textControls = useAnimation();
   const boxControls = useAnimation();
+
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
   const handleRegister = async () => {
     await textControls.start({
       opacity: 0,
       display: "none",
     });
     await Promise.all([animateButton(), animateBox()]);
+    await setIsFormOpen(true)
   };
   const animateButton = async () => {
     await regControls.start({
@@ -67,14 +71,18 @@ const Home = () => {
         >
           REGISTER
         </motion.button>
-        <motion.div
-          className="register-container"
-          initial={{ y: -100 }}
-          animate={{ y: 0 }}
-          transition={{duration: .75, ease: easeInOut}}
-        >
-          <Register />
-        </motion.div>
+        {isFormOpen ? (
+          <motion.div
+            className="register-container"
+            initial={{ y: -10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.75, ease: easeInOut }}
+          >
+            <Register />
+          </motion.div>
+        ) : (
+          ""
+        )}
       </motion.div>
       <div className="space-station">
         <img src={SpaceStation} alt="" />

@@ -1,0 +1,8 @@
+.testimonials{
+    height: 100vh;
+    position: relative;
+}
+.venus{
+    position: absolute;
+    left: -10vw;
+}
