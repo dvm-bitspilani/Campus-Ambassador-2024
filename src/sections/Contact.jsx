@@ -1,9 +1,9 @@
-  import React from "react";
+  // import React from "react";
   import "./Contact.css";
 
   const Contact = () => {
     return (
-      <div className="contact">
+      <section className="contact">
         <div className="contact-heading">
           <span>Contact Us</span>
         </div>
@@ -29,7 +29,7 @@
 
           <div className="contact-desc">For any technical issues click here</div>
         </div>
-      </div>
+      </section>
     );
   };
 

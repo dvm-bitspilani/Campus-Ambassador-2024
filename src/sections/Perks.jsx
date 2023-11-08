@@ -1,9 +1,9 @@
-import React from "react";
+// import React from "react";
 import "./Perks.css";
 
 const Perks = () => {
   return (
-    <div className="perks">
+    <section className="perks">
       <div className="perks-container">
         <div className="perks-left">
           <div className="perks-left-top">
@@ -53,7 +53,7 @@ const Perks = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

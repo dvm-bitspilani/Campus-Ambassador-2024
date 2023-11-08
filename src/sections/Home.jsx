@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Home.css";
 import SpaceStation from "../../public/SpaceStation.png";
 import LeftSatellite from "../../public/LeftSatellite.png";
 import RightSatellite from "../../public/RightSatellite.png";
 import {
-  easeIn,
+  // easeIn,
   easeInOut,
-  easeOut,
+  // easeOut,
   motion,
   useAnimation,
 } from "framer-motion";
@@ -43,7 +43,7 @@ const Home = () => {
   };
 
   return (
-    <div className="home">
+    <section className="home">
       <motion.div
         className="home-register"
         initial={{
@@ -93,7 +93,7 @@ const Home = () => {
       <div className="right-satellite">
         <img src={RightSatellite} alt="" />
       </div>
-    </div>
+    </section>
   );
 };
 

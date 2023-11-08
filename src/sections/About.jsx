@@ -1,11 +1,11 @@
-import React from "react";
+// import React from "react";
 import "./About.css";
 import Mars from '../../public/mars.png'
 import Rover from "../../public/rover.png"
 
 const About = () => {
   return (
-    <div className="about">
+    <section className="about">
       <div className="about-content">
         <div className="about-heading">
           <h1>
@@ -26,7 +26,7 @@ const About = () => {
             <img src={Rover} alt="" />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

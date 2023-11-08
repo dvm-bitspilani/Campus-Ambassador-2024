@@ -3,9 +3,9 @@ import './Testimonials.css'
 
 const Testimonials = () => {
   return (
-    <div className="testimonials">
+    <section className="testimonials">
         
-    </div>
+    </section>
   )
 }
 

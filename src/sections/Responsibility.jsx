@@ -1,9 +1,9 @@
-import React from "react";
+// import React from "react";
 import "./Responsibility.css";
 
 const Responsibility = () => {
   return (
-    <div className="responsibility">
+    <section className="responsibility">
       <div className="repsonsibility-container">
         <div className="respo-left">
           <div className="perks-heading respo-heading">RESPONSIBILITIES</div>
@@ -46,7 +46,7 @@ const Responsibility = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
