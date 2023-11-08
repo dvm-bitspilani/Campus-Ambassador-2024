@@ -21,43 +21,89 @@ export default function gsapInit() {
       defaults: {
         duration: 1,
         ease: "power2.inOut",
-        reversed: direction === -1,
       },
       onStart: () => {
-        gsap.set(direction === 1 ? section2 : section1, {
-        //   autoAlpha: 1,
-          zIndex: 1,
-        });
+        if (direction === 1) {
+          gsap.set(section2, {
+            zIndex: 1,
+          });
+        } else {
+          gsap.set(section1, {
+            autoAlpha: 0,
+            // zIndex: 1,
+          });
+          gsap.set(section2, {
+            zIndex: 0,
+            autoAlpha: 1,
+          });
+        }
       },
       onComplete: () => {
         animating = false;
-        gsap.set(direction === 1 ? section1 : section2, {
-        //   autoAlpha: 0,
-          zIndex: 0,
-        });
+        if (direction === 1) {
+          gsap.set(section1, {
+            autoAlpha: 0,
+            zIndex: 0,
+          });
+        } else {
+          gsap.set(section2, {
+            zIndex: 0,
+          });
+        }
       },
     });
 
-    tl.fromTo(".left-satellite", { x: 0 }, { x: -1000 })
-      .fromTo(".right-satellite", { x: 0 }, { x: 1000 }, 0)
-      .fromTo(
+    if (direction === 1) {
+      tl.fromTo(".left-satellite", { x: 0 }, { x: -1000 })
+        .fromTo(".right-satellite", { x: 0 }, { x: 1000 }, 0)
+        .fromTo(".home-register", { autoAlpha: 1 }, { autoAlpha: 0 }, 0)
+        .fromTo(
+          section1,
+          { autoAlpha: 1 },
+          { autoAlpha: 0, ease: "power2.inOut", duration: 0.5 },
+          ">"
+        )
+        .fromTo(
+          section2,
+          { autoAlpha: 0 },
+          { autoAlpha: 1, ease: "power2.inOut", duration: 0.5 },
+          "<"
+        )
+        .fromTo(
+          "#mars-surface",
+          { y: 400 },
+          { y: 0, ease: "power2.inOut", duration: 0.5 },
+          ">"
+        )
+        .fromTo("#mars-rover", { x: 1000 }, { x: 0, ease: "power2.inOut", duration:0.5 }, ">")
+        .fromTo(
+          "body",
+          { backgroundPositionY: "0%" },
+          { backgroundPositionY: "10%" },
+          0
+        );
+    } else {
+      tl.fromTo(
         section1,
-        { autoAlpha: 1 },
-        { autoAlpha: 0, ease: "power2.inOut" },
-        ">"
-      )
-      .fromTo(
-        section2,
         { autoAlpha: 0 },
-        { autoAlpha: 1, ease: "power2.inOut" },
-        "<"
+        { autoAlpha: 1, ease: "power2.inOut" }
       )
-      .fromTo(
-        "body",
-        { backgroundPositionY: "0%" },
-        { backgroundPositionY: "10%" },
-        0
-      );
+        .fromTo(
+          section2,
+          { autoAlpha: 1 },
+          { autoAlpha: 0, ease: "power2.inOut" },
+          "<"
+        )
+        .fromTo(
+          "body",
+          { backgroundPositionY: "10%" },
+          { backgroundPositionY: "0%" },
+          0
+        )
+        .fromTo(".left-satellite", { x: -1000 }, { x: 0 }, ">")
+        .fromTo(".right-satellite", { x: 1000 }, { x: 0 }, "<")
+        .fromTo(".home-register", { autoAlpha: 0 }, { autoAlpha: 1 }, "<");
+    }
   }
 
   function transition2(direction) {

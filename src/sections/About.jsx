@@ -21,9 +21,9 @@ const About = () => {
         </div>
       </div>
       <div className="about-surface">
-        <img src={Mars} alt="" />
+        <img id="mars-surface" src={Mars} alt="" />
         <div className="about-rover">
-            <img src={Rover} alt="" />
+            <img id="mars-rover" src={Rover} alt="" />
         </div>
       </div>
     </section>
