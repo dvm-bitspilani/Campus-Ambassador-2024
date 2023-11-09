@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useEffect, useState } from "react";
 import "./Home.css";
 import SpaceStation from "../../public/SpaceStation.png";
 import LeftSatellite from "../../public/LeftSatellite.png";
@@ -12,12 +12,14 @@ import {
 } from "framer-motion";
 import Register from "../components/Register";
 
-const Home = () => {
+import PropTypes from "prop-types";
+
+const Home = ({isFormOpen, setIsFormOpen}) => {
   const regControls = useAnimation();
   const textControls = useAnimation();
   const boxControls = useAnimation();
 
-  const [isFormOpen, setIsFormOpen] = useState(false);
+  // const [isFormOpen, setIsFormOpen] = useState(false);
 
   const handleRegister = async () => {
     await textControls.start({
@@ -69,6 +71,7 @@ const Home = () => {
           animate={regControls}
           onClick={handleRegister}
           transition={{ ease: easeInOut, duration: 0.05 }}
+          className="home-register-button"
         >
           REGISTER
         </motion.button>
@@ -99,3 +102,8 @@ const Home = () => {
 };
 
 export default Home;
+
+Home.propTypes = {
+  isFormOpen: PropTypes.bool.isRequired,
+  setIsFormOpen: PropTypes.func.isRequired
+}

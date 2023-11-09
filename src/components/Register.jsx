@@ -85,9 +85,9 @@ const Register = ({
 
   return (
     <div className="register">
-      <div className="register-back" onClick={handleBack}>
+      <button className="register-back" onClick={handleBack}>
         <img src={Cross} alt="" />
-      </div>
+      </button>
       <div className="register-form">
         <form>
           <div className="input-block">

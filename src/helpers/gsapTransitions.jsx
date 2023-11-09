@@ -4,6 +4,25 @@ import { Observer } from "gsap/all";
 export default function gsapInit() {
   gsap.registerPlugin(Observer);
 
+  // console.log("isFormOpen (inside function) : ", isFormOpen);
+  let isFormOpen = false;
+
+  document.querySelector(".home-register-button").addEventListener("click", () => {
+    console.log("register clicked");
+    // On mouse down on .home-register-button, isFormOpen is set to true
+    isFormOpen = true;
+
+    document.querySelector(".home-register-button").removeEventListener("click", () => {
+      isFormOpen = true});
+    // On mouse down on .register-back button, isFormOpen is set to false
+    setTimeout(() => {
+    document.querySelector(".register-back").addEventListener("click", () => {
+      console.log("back clicked");
+      isFormOpen = false;
+    });
+    }, 200);
+  });
+
   const sections = document.querySelectorAll("section");
   const boxAnimatables1 = document.querySelectorAll(".perks-animatable1");
   const boxAnimatables2 = document.querySelectorAll(".box-animatable2");
@@ -160,7 +179,11 @@ export default function gsapInit() {
     });
 
     if (direction === 1) {
-      tl.fromTo("#mars-rover", { x: 0 }, { x: -10000 , duration: 1.3, ease: "power2.inOut"})
+      tl.fromTo(
+        "#mars-rover",
+        { x: 0 },
+        { x: -10000, duration: 1.3, ease: "power2.inOut" }
+      )
         .fromTo("#mars-surface", { y: 0 }, { y: 400, duration: 0.3 }, "-=0.3")
         .fromTo(
           section1,
@@ -345,12 +368,13 @@ export default function gsapInit() {
           { autoAlpha: 0 },
           { autoAlpha: 1, ease: "power2.inOut" },
           0
-        ) .fromTo(
-            ".contact-container",
-            { scale: 0 },
-            { scale: 1, ease: "power2.inOut" },
-            ">"
-            )
+        )
+        .fromTo(
+          ".contact-container",
+          { scale: 0 },
+          { scale: 1, ease: "power2.inOut" },
+          ">"
+        )
         .fromTo(
           "body",
           { backgroundPositionY: "30%" },
@@ -381,24 +405,7 @@ export default function gsapInit() {
   function gotoSection(index, direction) {
     if (index < 0 || index >= sections.length || animating) return;
 
-    console.log({ currentIndex, index });
-
     animating = true;
-
-    // const currentSection = sections[currentIndex];
-    // const nextSection = sections[index];
-
-    // const tl = gsap.timeline({
-    //   defaults: { duration: 1, ease: "power2.inOut" },
-    //   onStart: () => {
-    //     gsap.set(nextSection, { autoAlpha: 1, zIndex: 1 });
-    //   },
-    //   onComplete: () => {
-    //     animating = false;
-    //     currentIndex = index;
-    //     gsap.set(currentSection, { autoAlpha: 0, zIndex: 0 });
-    //   },
-    // });
 
     if (currentIndex === 0 || (currentIndex === 1 && index === 0)) {
       transition1(direction);
@@ -413,12 +420,16 @@ export default function gsapInit() {
   }
 
   // Observer
-  Observer.create({
+  const mainObserver = Observer.create({
+    targets: "body",
     type: "wheel,touch,pointer",
     wheelSpeed: -1,
-    onDown: () => !animating && gotoSection(currentIndex - 1, -1),
-    onUp: () => !animating && gotoSection(currentIndex + 1, 1),
+    onDown: () =>
+      !animating && !isFormOpen && gotoSection(currentIndex - 1, -1),
+    onUp: () => !animating && !isFormOpen && gotoSection(currentIndex + 1, 1),
     tolerance: 30,
     preventDefault: true,
   });
+
+  return mainObserver;
 }

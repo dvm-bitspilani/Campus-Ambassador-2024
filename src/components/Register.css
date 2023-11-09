@@ -15,6 +15,9 @@
   align-items: center;
   /* scale: 1.a; */
   cursor: pointer;
+
+  background-color: transparent;
+  border: none;
 }
 .register-form {
   height: 100%;
