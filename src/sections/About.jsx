@@ -14,7 +14,7 @@ const About = () => {
         </div>
         <div className="about-desc">
           APOGEE, the international technical festival of BITS Pilani, is in its
-          41st year now and is bigger than ever. Considered to be one of the
+          42nd year now and is bigger than ever. Considered to be one of the
           biggest platforms to discover, nurture and accelerate fresh ideas from
           bright minds all over the country, this festival attracts more than
           10000 students, spanning over a 600 colleges.

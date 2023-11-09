@@ -24,21 +24,22 @@ const Home = () => {
       opacity: 0,
       display: "none",
     });
-    await Promise.all([animateButton(), animateBox()]);
-    await setIsFormOpen(true)
+    await Promise.all([ animateBox()]);
+    setIsFormOpen(true)
   };
-  const animateButton = async () => {
-    await regControls.start({
-      letterSpacing: "10px",
-    });
-  };
+  // const animateButton = async () => {
+  //   await regControls.start({
+  //     letterSpacing: "10px",
+  //   });
+  // };
   const animateBox = async () => {
     await boxControls.start({
-      height: "90%",
-      rotate: -90,
-      scale: 1.75,
-      justifyContent: "flex-start",
-      gap: ".25rem",
+      // height: "90%",
+      // rotate: -90,
+      // scale: 1.75,
+      // justifyContent: "flex-start",
+      // gap: ".25rem",
+      opacity: 0
     });
   };
 
@@ -53,13 +54,13 @@ const Home = () => {
           justifyContent: "center",
         }}
         animate={boxControls}
-        transition={{ duration: 0.75, ease: easeInOut, delay: 0.25 }}
+        transition={{ duration: 0.05, ease: easeInOut }}
       >
         <motion.div
           className="home-text"
           initial={{ opacity: 1 }}
           animate={textControls}
-          transition={{ duration: 0.25, delay: 0.25 }}
+          transition={{ duration: 0.05 }}
         >
           Become the Leader of your College
         </motion.div>
@@ -67,23 +68,23 @@ const Home = () => {
           initial={{ letterSpacing: "1px" }}
           animate={regControls}
           onClick={handleRegister}
-          transition={{ ease: easeInOut, delay: 0.5, duration: 0.75 }}
+          transition={{ ease: easeInOut, duration: 0.05 }}
         >
           REGISTER
         </motion.button>
-        {isFormOpen ? (
+      </motion.div>
+      {isFormOpen ? (
           <motion.div
             className="register-container"
             initial={{ y: -10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.75, ease: easeInOut }}
+            transition={{ duration: 0.25, ease: easeInOut }}
           >
-            <Register />
+            <Register setIsFormOpen={setIsFormOpen} textControls={textControls} boxControls={boxControls} regControls={regControls} />
           </motion.div>
         ) : (
           ""
         )}
-      </motion.div>
       <div className="space-station">
         <img src={SpaceStation} alt="" />
       </div>

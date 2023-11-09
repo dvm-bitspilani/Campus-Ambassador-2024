@@ -37,9 +37,16 @@
   font-weight: 400;
   letter-spacing: 1px;
 }
-.register-container{
-    height: 100%;
-    width: 100%;
+.register-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .space-station {
   mix-blend-mode: hard-light;
