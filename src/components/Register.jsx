@@ -27,18 +27,35 @@ const Register = ({
     validationSchema: regSchema,
     onSubmit: async (values) => {
       console.log(values);
-      setIsFormOpen(false)
+      setIsFormOpen(false);
+
+      async function sendReg() {
+        try {
+          const res = await fetch(
+            "https://bits-apogee.org/collegeambassador/register",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(values),
+            }
+          );
+
+          const data = await res.json();
+          console.log(data.message);
+        } catch (error) {
+          console.error("Error:", error.message);
+        }
+      }
+
       await textControls.start({
         opacity: 1,
         display: "block",
       });
-      await Promise.all([animateBox()]);
-  
+      await Promise.all([animateBox(), sendReg()]);
     },
   });
-  // console.log(errors)
-
-  
 
   const [colleges, setColleges] = useState([]);
   const infoSources = [
