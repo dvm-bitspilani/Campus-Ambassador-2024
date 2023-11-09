@@ -160,8 +160,8 @@ export default function gsapInit() {
     });
 
     if (direction === 1) {
-      tl.fromTo("#mars-rover", { x: 0 }, { x: -10000 })
-        .fromTo("#mars-surface", { y: 0 }, { y: 400, duration: 0.3 }, ">")
+      tl.fromTo("#mars-rover", { x: 0 }, { x: -10000 , duration: 1.3, ease: "power2.inOut"})
+        .fromTo("#mars-surface", { y: 0 }, { y: 400, duration: 0.3 }, "-=0.3")
         .fromTo(
           section1,
           { autoAlpha: 1 },
