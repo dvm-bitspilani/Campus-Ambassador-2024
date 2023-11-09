@@ -47,6 +47,15 @@ const Home = ({isFormOpen, setIsFormOpen}) => {
 
   return (
     <section className="home">
+      <div className="home-heading-wrapper">
+        <div className="home-logo">
+          <img src="/apogee-logo.svg" alt="logo" />
+        </div>
+        <div className="home-heading">
+          <span className="home-heading-text">Campus</span> <br />
+          <span className="home-heading-subtext">Ambassador</span>
+          </div>
+      </div>
       <motion.div
         className="home-register"
         initial={{

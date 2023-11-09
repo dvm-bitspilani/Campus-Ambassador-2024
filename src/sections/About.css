@@ -10,10 +10,22 @@
     margin-top: -10rem;
   width: 60%;
 }
+.about-heading{
+  position: relative;
+}
 .about-heading h1 {
   color: #fafafa;
   font-family: "Visby Bold";
   font-size: 3.5rem;
+}
+.about-heading>img{
+  position: absolute;
+  left: -1rem;
+  top: 0;
+  z-index: -1;
+
+  transform: translate(-100%) scale(0.5);
+  transform-origin: top right;
 }
 .about-heading h1 span {
   /* text-decoration: underline; */

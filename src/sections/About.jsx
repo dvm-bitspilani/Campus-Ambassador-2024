@@ -8,6 +8,7 @@ const About = () => {
     <section className="about">
       <div className="about-content">
         <div className="about-heading">
+          <img src="/apogee-logo.svg" alt="logo" />
           <h1>
             WHAT IS <span>APOGEE?</span>
           </h1>
