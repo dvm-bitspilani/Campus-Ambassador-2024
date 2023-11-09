@@ -159,6 +159,7 @@ export default function gsapInit() {
         if (direction === 1) {
           gsap.set(section2, {
             zIndex: 1,
+            xPercent: 0,
           });
         } else {
           gsap.set(section1, {
