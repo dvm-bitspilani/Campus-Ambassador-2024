@@ -71,6 +71,15 @@ export default function gsapInit() {
             autoAlpha: 0,
             zIndex: 0,
           });
+          gsap.set(".left-satellite", {
+            x: 0,
+          });
+          gsap.set(".right-satellite", {
+            x: 0,
+          });
+          gsap.set(".home-register", {
+            autoAlpha: 1,
+          });
         } else {
           gsap.set(section2, {
             zIndex: 0,
@@ -563,7 +572,11 @@ export default function gsapInit() {
         .fromTo(
           "body",
           { backgroundPositionY: `${currentIndex * 10}%` },
-          { backgroundPositionY: `${index * 10}%`, ease: "power2.inOut", duration: 2 },
+          {
+            backgroundPositionY: `${index * 10}%`,
+            ease: "power2.inOut",
+            duration: 2,
+          },
           0
         );
     } else {
