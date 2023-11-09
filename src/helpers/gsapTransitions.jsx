@@ -80,6 +80,9 @@ export default function gsapInit() {
           gsap.set(".home-register", {
             autoAlpha: 1,
           });
+          gsap.set(".home-heading-wrapper", {
+            autoAlpha: 1,
+          });
         } else {
           gsap.set(section2, {
             zIndex: 0,
@@ -217,8 +220,8 @@ export default function gsapInit() {
         .fromTo(
           boxAnimatables1,
           { scale: 0 },
-          { scale: 1, ease: "power2.inOut", stagger: 0.2 },
-          ">"
+          { scale: 1, ease: "power2.inOut", stagger: 0.15 },
+          "-=0.3"
         )
         .fromTo(
           "body",
@@ -304,8 +307,8 @@ export default function gsapInit() {
         .fromTo(
           boxAnimatables2,
           { scale: 0 },
-          { scale: 1, ease: "power2.inOut", stagger: 0.2 },
-          ">"
+          { scale: 1, ease: "power2.inOut", stagger: 0.15 },
+          "-=0.3"
         )
         .fromTo(
           "body",
@@ -392,7 +395,7 @@ export default function gsapInit() {
           ".test-header>h1",
           { y: 100 },
           { y: 0, ease: "power2.inOut" },
-          ">"
+          "-=0.3"
         )
         .fromTo(
           ".carousel",
@@ -483,7 +486,7 @@ export default function gsapInit() {
           ".contact-container",
           { scale: 0 },
           { scale: 0.9, ease: "power2.inOut" },
-          ">"
+          "-=0.3"
         )
         .fromTo(
           "body",
