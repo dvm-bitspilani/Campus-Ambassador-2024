@@ -6,7 +6,7 @@ const Perks = () => {
     <section className="perks">
       <div className="perks-container">
         <div className="perks-left">
-          <div className="perks-left-top">
+          <div className="perks-left-top perks-animatable1">
             <div className="perks-box">
               <div className="perks-box-heading">
                 Cash Prizes and Passes Worth 2 Lakhs to be Won
@@ -19,7 +19,7 @@ const Perks = () => {
             </div>
           </div>
           <div className="perks-left-bottom">
-            <div className="perks-left-bottom-1">
+            <div className="perks-left-bottom-1 perks-animatable1">
               <div className="perks-box">
                 <div className="perks-box-heading">Goodies and Merchandise</div>
                 <div className="perks-box-desc">
@@ -28,7 +28,7 @@ const Perks = () => {
                 </div>
               </div>
             </div>
-            <div className="perks-left-bottom-2">
+            <div className="perks-left-bottom-2 perks-animatable1">
               <div className="perks-box">
                 <div className="perks-box-heading">Free Coupons</div>
                 <div className="perks-box-desc">
@@ -41,7 +41,7 @@ const Perks = () => {
         </div>
         <div className="perks-right">
           <div className="perks-heading">REWARDS AND INCENTIVES</div>
-          <div className="perks-right-bottom">
+          <div className="perks-right-bottom perks-animatable1">
             <div className="perks-box">
               <div className="perks-box-heading">LORs and Certificates</div>
               <div className="perks-box-desc">

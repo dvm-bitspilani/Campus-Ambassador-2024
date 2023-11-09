@@ -7,7 +7,7 @@ const Responsibility = () => {
       <div className="repsonsibility-container">
         <div className="respo-left">
           <div className="perks-heading respo-heading">RESPONSIBILITIES</div>
-          <div className="perks-box">
+          <div className="perks-box box-animatable2">
             <div className="perks-box-desc">
               As a campus ambassador,the primary task will be to coordinate with
               APOGEE to strategize campaigns to make the fest bigger and better,
@@ -17,7 +17,7 @@ const Responsibility = () => {
           </div>
         </div>
         <div className="respo-right">
-          <div className="respo-right-top">
+          <div className="respo-right-top box-animatable2">
             <div className="perks-box">
               <div className="perks-box-heading">SOCIAL MEDIA PLATFORMS</div>
               <div className="perks-box-desc">
@@ -28,7 +28,7 @@ const Responsibility = () => {
             </div>
           </div>
           <div className="respo-right-bottom">
-            <div className="perks-box">
+            <div className="perks-box box-animatable2">
               <div className="perks-box-heading">CAMPUS PUBLICITY</div>
               <div className="perks-box-desc">
                 Publicity of APOGEE by sending route mails and messages on
@@ -36,7 +36,7 @@ const Responsibility = () => {
                 fest through posters, fliers etc.
               </div>
             </div>
-            <div className="perks-box">
+            <div className="perks-box box-animatable2">
               <div className="perks-box-heading">WORKSHOPS</div>
               <div className="perks-box-desc">
                 Organising technical events workshops in their college under the

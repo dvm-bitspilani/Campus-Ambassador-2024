@@ -5,6 +5,8 @@ export default function gsapInit() {
   gsap.registerPlugin(Observer);
 
   const sections = document.querySelectorAll("section");
+  const boxAnimatables1 = document.querySelectorAll(".perks-animatable1");
+  const boxAnimatables2 = document.querySelectorAll(".box-animatable2");
 
   // sections 1 to end should have alpha 0
   gsap.set(sections, { autoAlpha: 0, zIndex: 0 });
@@ -61,13 +63,13 @@ export default function gsapInit() {
           section1,
           { autoAlpha: 1 },
           { autoAlpha: 0, ease: "power2.inOut", duration: 0.5 },
-          ">"
+          0
         )
         .fromTo(
           section2,
           { autoAlpha: 0 },
           { autoAlpha: 1, ease: "power2.inOut", duration: 0.5 },
-          "<"
+          ">"
         )
         .fromTo(
           "#mars-surface",
@@ -75,11 +77,16 @@ export default function gsapInit() {
           { y: 0, ease: "power2.inOut", duration: 0.5 },
           ">"
         )
-        .fromTo("#mars-rover", { x: 1000 }, { x: 0, ease: "power2.inOut", duration:0.5 }, ">")
+        .fromTo(
+          "#mars-rover",
+          { x: 1000 },
+          { x: 0, ease: "power2.inOut", duration: 0.5 },
+          ">"
+        )
         .fromTo(
           "body",
           { backgroundPositionY: "0%" },
-          { backgroundPositionY: "10%" },
+          { backgroundPositionY: "10%", ease: "power2.inOut", duration: 2 },
           0
         );
     } else {
@@ -114,40 +121,90 @@ export default function gsapInit() {
       defaults: {
         duration: 1,
         ease: "power2.inOut",
-        reversed: direction === -1,
       },
       onStart: () => {
-        gsap.set(direction === 1 ? section2 : section1, {
-          autoAlpha: 1,
-          zIndex: 1,
-        });
+        if (direction === 1) {
+          gsap.set(section2, {
+            zIndex: 1,
+          });
+        } else {
+          gsap.set(section1, {
+            autoAlpha: 0,
+            // zIndex: 1,
+          });
+          gsap.set(section2, {
+            zIndex: 0,
+            autoAlpha: 1,
+          });
+          gsap.set("#mars-rover", {
+            x: 0,
+          });
+          gsap.set("#mars-surface", {
+            y: 0,
+          });
+        }
       },
       onComplete: () => {
         animating = false;
-        gsap.set(direction === 1 ? section1 : section2, {
-          autoAlpha: 0,
-          zIndex: 0,
-        });
+        if (direction === 1) {
+          gsap.set(section1, {
+            autoAlpha: 0,
+            zIndex: 0,
+          });
+        } else {
+          gsap.set(section2, {
+            zIndex: 0,
+          });
+        }
       },
     });
 
-    tl.fromTo(
-      section1,
-      { autoAlpha: 1 },
-      { autoAlpha: 0, ease: "power2.inOut" }
-    )
-      .fromTo(
-        section2,
+    if (direction === 1) {
+      tl.fromTo("#mars-rover", { x: 0 }, { x: -10000 })
+        .fromTo("#mars-surface", { y: 0 }, { y: 400, duration: 0.3 }, ">")
+        .fromTo(
+          section1,
+          { autoAlpha: 1 },
+          { autoAlpha: 0, ease: "power2.inOut", duration: 1 },
+          "-=0.3"
+        )
+        .fromTo(
+          section2,
+          { autoAlpha: 0 },
+          { autoAlpha: 1, ease: "power2.inOut" },
+          "<"
+        )
+        .fromTo(
+          boxAnimatables1,
+          { scale: 0 },
+          { scale: 1, ease: "power2.inOut", stagger: 0.2 },
+          ">"
+        )
+        .fromTo(
+          "body",
+          { backgroundPositionY: "10%" },
+          { backgroundPositionY: "20%", ease: "power2.inOut", duration: 2 },
+          0
+        );
+    } else {
+      tl.fromTo(
+        section1,
         { autoAlpha: 0 },
-        { autoAlpha: 1, ease: "power2.inOut" },
-        0
+        { autoAlpha: 1, ease: "power2.inOut" }
       )
-      .fromTo(
-        "body",
-        { backgroundPositionY: "10%" },
-        { backgroundPositionY: "20%" },
-        0
-      );
+        .fromTo(
+          section2,
+          { autoAlpha: 1 },
+          { autoAlpha: 0, ease: "power2.inOut" },
+          "<"
+        )
+        .fromTo(
+          "body",
+          { backgroundPositionY: "20%" },
+          { backgroundPositionY: "10%" },
+          0
+        );
+    }
   }
 
   function transition3(direction) {
@@ -158,40 +215,83 @@ export default function gsapInit() {
       defaults: {
         duration: 1,
         ease: "power2.inOut",
-        reversed: direction === -1,
       },
       onStart: () => {
-        gsap.set(direction === 1 ? section2 : section1, {
-          autoAlpha: 1,
-          zIndex: 1,
-        });
+        if (direction === 1) {
+          gsap.set(section2, {
+            zIndex: 1,
+            autoAlpha: 1,
+          });
+        } else {
+          gsap.set(section1, {
+            autoAlpha: 0,
+            // zIndex: 1,
+            xPercent: 0,
+          });
+          gsap.set(section2, {
+            zIndex: 0,
+            autoAlpha: 1,
+          });
+        }
       },
       onComplete: () => {
         animating = false;
-        gsap.set(direction === 1 ? section1 : section2, {
-          autoAlpha: 0,
-          zIndex: 0,
-        });
+        if (direction === 1) {
+          gsap.set(section1, {
+            autoAlpha: 0,
+            zIndex: 0,
+          });
+        } else {
+          gsap.set(section2, {
+            zIndex: 0,
+          });
+        }
       },
     });
 
-    tl.fromTo(
-      section1,
-      { autoAlpha: 1 },
-      { autoAlpha: 0, ease: "power2.inOut" }
-    )
-      .fromTo(
-        section2,
-        { autoAlpha: 0 },
-        { autoAlpha: 1, ease: "power2.inOut" },
-        0
+    if (direction === 1) {
+      tl.fromTo(
+        section1,
+        { xPercent: 0 },
+        { xPercent: -100, ease: "power2.inOut" }
       )
-      .fromTo(
-        "body",
-        { backgroundPositionY: "20%" },
-        { backgroundPositionY: "30%" },
-        0
-      );
+        .fromTo(
+          section2,
+          { xPercent: 100 },
+          { xPercent: 0, ease: "power2.inOut" },
+          0
+        )
+        .fromTo(
+          boxAnimatables2,
+          { scale: 0 },
+          { scale: 1, ease: "power2.inOut", stagger: 0.2 },
+          ">"
+        )
+        .fromTo(
+          "body",
+          { backgroundPositionY: "20%" },
+          { backgroundPositionY: "30%", ease: "power2.inOut", duration: 2 },
+          0
+        );
+    } else {
+      tl.fromTo(
+        section1,
+        { autoAlpha: 0 },
+        { autoAlpha: 1, ease: "power2.inOut" }
+      )
+        .fromTo(
+          section2,
+          { autoAlpha: 1 },
+          { autoAlpha: 0, ease: "power2.inOut" },
+          "<"
+        )
+        .fromTo(
+          "body",
+          { backgroundPositionY: "30%" },
+          { backgroundPositionY: "20%" },
+          0
+        );
+    }
   }
 
   function transition4(direction) {
@@ -202,40 +302,80 @@ export default function gsapInit() {
       defaults: {
         duration: 1,
         ease: "power2.inOut",
-        reversed: direction === -1,
       },
       onStart: () => {
-        gsap.set(direction === 1 ? section2 : section1, {
-          autoAlpha: 1,
-          zIndex: 1,
-        });
+        if (direction === 1) {
+          gsap.set(section2, {
+            zIndex: 1,
+            autoAlpha: 1,
+          });
+        } else {
+          gsap.set(section1, {
+            autoAlpha: 0,
+          });
+          gsap.set(section2, {
+            zIndex: 0,
+            autoAlpha: 1,
+          });
+        }
       },
       onComplete: () => {
         animating = false;
-        gsap.set(direction === 1 ? section1 : section2, {
-          autoAlpha: 0,
-          zIndex: 0,
-        });
+        if (direction === 1) {
+          gsap.set(section1, {
+            autoAlpha: 0,
+            zIndex: 0,
+          });
+        } else {
+          gsap.set(section2, {
+            zIndex: 0,
+          });
+        }
       },
     });
 
-    tl.fromTo(
-      section1,
-      { autoAlpha: 1 },
-      { autoAlpha: 0, ease: "power2.inOut" }
-    )
-      .fromTo(
-        section2,
-        { autoAlpha: 0 },
-        { autoAlpha: 1, ease: "power2.inOut" },
-        0
+    if (direction === 1) {
+      tl.fromTo(
+        section1,
+        { autoAlpha: 1 },
+        { autoAlpha: 0, ease: "power2.inOut" }
       )
-      .fromTo(
-        "body",
-        { backgroundPositionY: "30%" },
-        { backgroundPositionY: "40%" },
-        0
-      );
+        .fromTo(
+          section2,
+          { autoAlpha: 0 },
+          { autoAlpha: 1, ease: "power2.inOut" },
+          0
+        ) .fromTo(
+            ".contact-container",
+            { scale: 0 },
+            { scale: 1, ease: "power2.inOut" },
+            ">"
+            )
+        .fromTo(
+          "body",
+          { backgroundPositionY: "30%" },
+          { backgroundPositionY: "40%", ease: "power2.inOut", duration: 2 },
+          0
+        );
+    } else {
+      tl.fromTo(
+        section1,
+        { autoAlpha: 0 },
+        { autoAlpha: 1, ease: "power2.inOut" }
+      )
+        .fromTo(
+          section2,
+          { autoAlpha: 1 },
+          { autoAlpha: 0, ease: "power2.inOut" },
+          "<"
+        )
+        .fromTo(
+          "body",
+          { backgroundPositionY: "40%" },
+          { backgroundPositionY: "30%" },
+          0
+        );
+    }
   }
 
   function gotoSection(index, direction) {
@@ -245,8 +385,8 @@ export default function gsapInit() {
 
     animating = true;
 
-    const currentSection = sections[currentIndex];
-    const nextSection = sections[index];
+    // const currentSection = sections[currentIndex];
+    // const nextSection = sections[index];
 
     // const tl = gsap.timeline({
     //   defaults: { duration: 1, ease: "power2.inOut" },
