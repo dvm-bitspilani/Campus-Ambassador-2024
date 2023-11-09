@@ -7,19 +7,26 @@ export default function gsapInit() {
   // console.log("isFormOpen (inside function) : ", isFormOpen);
   let isFormOpen = false;
 
-  document.querySelector(".home-register-button").addEventListener("click", () => {
-    // On mouse down on .home-register-button, isFormOpen is set to true
-    isFormOpen = true;
+  document
+    .querySelector(".home-register-button")
+    .addEventListener("click", () => {
+      // On mouse down on .home-register-button, isFormOpen is set to true
+      isFormOpen = true;
 
-    document.querySelector(".home-register-button").removeEventListener("click", () => {
-      isFormOpen = true});
-    // On mouse down on .register-back button, isFormOpen is set to false
-    setTimeout(() => {
-    document.querySelector(".register-back").addEventListener("click", () => {
-      isFormOpen = false;
+      document
+        .querySelector(".home-register-button")
+        .removeEventListener("click", () => {
+          isFormOpen = true;
+        });
+      // On mouse down on .register-back button, isFormOpen is set to false
+      setTimeout(() => {
+        document
+          .querySelector(".register-back")
+          .addEventListener("click", () => {
+            isFormOpen = false;
+          });
+      }, 200);
     });
-    }, 200);
-  });
 
   const sections = document.querySelectorAll("section");
   const boxAnimatables1 = document.querySelectorAll(".perks-animatable1");
@@ -333,6 +340,99 @@ export default function gsapInit() {
         } else {
           gsap.set(section1, {
             autoAlpha: 0,
+            // zIndex: 1,
+            xPercent: 0,
+          });
+          gsap.set(section2, {
+            zIndex: 0,
+            autoAlpha: 1,
+          });
+        }
+      },
+      onComplete: () => {
+        animating = false;
+        if (direction === 1) {
+          gsap.set(section1, {
+            autoAlpha: 0,
+            zIndex: 0,
+          });
+        } else {
+          gsap.set(section2, {
+            zIndex: 0,
+          });
+        }
+      },
+    });
+
+    if (direction === 1) {
+      tl.fromTo(
+        section1,
+        { xPercent: 0 },
+        { xPercent: 100, ease: "power2.inOut" }
+      )
+        .fromTo(
+          section2,
+          { xPercent: -100 },
+          { xPercent: 0, ease: "power2.inOut" },
+          0
+        )
+        .fromTo(
+          ".test-header>h1",
+          { y: 100 },
+          { y: 0, ease: "power2.inOut" },
+          ">"
+        )
+        .fromTo(
+          ".carousel",
+          { scale: 0 },
+          { scale: 1, ease: "power2.inOut" },
+          "<"
+        )
+        .fromTo(
+          "body",
+          { backgroundPositionY: "30%" },
+          { backgroundPositionY: "40%", ease: "power2.inOut", duration: 2 },
+          0
+        );
+    } else {
+      tl.fromTo(
+        section1,
+        { autoAlpha: 0 },
+        { autoAlpha: 1, ease: "power2.inOut" }
+      )
+        .fromTo(
+          section2,
+          { autoAlpha: 1 },
+          { autoAlpha: 0, ease: "power2.inOut" },
+          "<"
+        )
+        .fromTo(
+          "body",
+          { backgroundPositionY: "40%" },
+          { backgroundPositionY: "30%" },
+          0
+        );
+    }
+  }
+
+  function transition5(direction) {
+    const section1 = sections[4];
+    const section2 = sections[5];
+
+    const tl = gsap.timeline({
+      defaults: {
+        duration: 1,
+        ease: "power2.inOut",
+      },
+      onStart: () => {
+        if (direction === 1) {
+          gsap.set(section2, {
+            zIndex: 1,
+            autoAlpha: 1,
+          });
+        } else {
+          gsap.set(section1, {
+            autoAlpha: 0,
           });
           gsap.set(section2, {
             zIndex: 0,
@@ -370,13 +470,13 @@ export default function gsapInit() {
         .fromTo(
           ".contact-container",
           { scale: 0 },
-          { scale: 1, ease: "power2.inOut" },
+          { scale: 0.9, ease: "power2.inOut" },
           ">"
         )
         .fromTo(
           "body",
-          { backgroundPositionY: "30%" },
-          { backgroundPositionY: "40%", ease: "power2.inOut", duration: 2 },
+          { backgroundPositionY: "40%" },
+          { backgroundPositionY: "50%", ease: "power2.inOut", duration: 2 },
           0
         );
     } else {
@@ -393,8 +493,95 @@ export default function gsapInit() {
         )
         .fromTo(
           "body",
+          { backgroundPositionY: "50%" },
           { backgroundPositionY: "40%" },
-          { backgroundPositionY: "30%" },
+          0
+        );
+    }
+  }
+
+  function generalTransition(index, direction) {
+    const section1 = sections[currentIndex];
+    const section2 = sections[index];
+
+    const tl = gsap.timeline({
+      defaults: {
+        duration: 1,
+        ease: "power2.inOut",
+      },
+      onStart: () => {
+        if (direction === 1) {
+          gsap.set(section2, {
+            zIndex: 1,
+            autoAlpha: 1,
+            xPercent: 0, // for section 3
+          });
+          gsap.set(section1, {
+            zIndex: 0,
+            xPercent: 0,
+          });
+        } else {
+          gsap.set(section2, {
+            autoAlpha: 0,
+            zIndex: 1,
+            xPercent: 0,
+          });
+          gsap.set(section1, {
+            zIndex: 0,
+            autoAlpha: 1,
+            xPercent: 0,
+          });
+        }
+      },
+      onComplete: () => {
+        animating = false;
+        if (direction === 1) {
+          gsap.set(section1, {
+            autoAlpha: 0,
+            zIndex: 0,
+          });
+        } else {
+          gsap.set(section1, {
+            zIndex: 0,
+          });
+        }
+      },
+    });
+
+    if (direction === 1) {
+      tl.fromTo(
+        section1,
+        { autoAlpha: 1 },
+        { autoAlpha: 0, ease: "power2.inOut" }
+      )
+        .fromTo(
+          section2,
+          { autoAlpha: 0 },
+          { autoAlpha: 1, ease: "power2.inOut" },
+          0
+        )
+        .fromTo(
+          "body",
+          { backgroundPositionY: `${currentIndex * 10}%` },
+          { backgroundPositionY: `${index * 10}%`, ease: "power2.inOut", duration: 2 },
+          0
+        );
+    } else {
+      tl.fromTo(
+        section2,
+        { autoAlpha: 0 },
+        { autoAlpha: 1, ease: "power2.inOut" }
+      )
+        .fromTo(
+          section1,
+          { autoAlpha: 1 },
+          { autoAlpha: 0, ease: "power2.inOut" },
+          "<"
+        )
+        .fromTo(
+          "body",
+          { backgroundPositionY: `${currentIndex * 10}%` },
+          { backgroundPositionY: `${index * 10}%` },
           0
         );
     }
@@ -405,16 +592,35 @@ export default function gsapInit() {
 
     animating = true;
 
-    console.log({currentIndex, index, direction})
+    console.log({ currentIndex, index, direction });
 
-    if (currentIndex === 0 || (currentIndex === 1 && index === 0)) {
+    if (
+      (currentIndex === 0 && index === 1) ||
+      (currentIndex === 1 && index === 0)
+    ) {
       transition1(direction);
-    } else if (currentIndex === 1 || (currentIndex === 2 && index === 1)) {
+    } else if (
+      (currentIndex === 1 && index === 2) ||
+      (currentIndex === 2 && index === 1)
+    ) {
       transition2(direction);
-    } else if (currentIndex === 2 || (currentIndex === 3 && index === 2)) {
+    } else if (
+      (currentIndex === 2 && index === 3) ||
+      (currentIndex === 3 && index === 2)
+    ) {
       transition3(direction);
-    } else if (currentIndex === 3 || (currentIndex === 4 && index === 3)) {
+    } else if (
+      (currentIndex === 3 && index === 4) ||
+      (currentIndex === 4 && index === 3)
+    ) {
       transition4(direction);
+    } else if (
+      (currentIndex === 4 && index === 5) ||
+      (currentIndex === 5 && index === 4)
+    ) {
+      transition5(direction);
+    } else {
+      generalTransition(index, direction);
     }
     currentIndex = index;
   }
@@ -427,27 +633,35 @@ export default function gsapInit() {
     onDown: () =>
       !animating && !isFormOpen && gotoSection(currentIndex - 1, -1),
     onUp: () => !animating && !isFormOpen && gotoSection(currentIndex + 1, 1),
-    tolerance: 30,
+    tolerance: 50,
     preventDefault: true,
   });
 
   // On click of nav icons, goToSection is called
   document.querySelector(".nav-home").addEventListener("click", () => {
-  if (currentIndex !== 0) gotoSection(0, -1);
+    const index = 0;
+    if (currentIndex !== index) gotoSection(index, -1);
   });
   document.querySelector(".nav-perks").addEventListener("click", () => {
-  if (currentIndex !== 2) gotoSection(2, currentIndex < 2 ? 1 : -1);
+    const index = 2;
+    if (currentIndex !== index)
+      gotoSection(index, currentIndex < index ? 1 : -1);
   });
-  // document.querySelector(".nav-testimonials").addEventListener("click", () => {
-  // if (currentIndex !== 2) gotoSection(10, 1);
-  // });
-  document.querySelector(".nav-responsibilities").addEventListener("click", () => {
-  if (currentIndex !== 3) gotoSection(3, currentIndex < 3 ? 1 : -1);
+  document
+    .querySelector(".nav-responsibilities")
+    .addEventListener("click", () => {
+      const index = 3;
+      if (currentIndex !== index)
+        gotoSection(index, currentIndex < index ? 1 : -1);
+    });
+  document.querySelector(".nav-testimonials").addEventListener("click", () => {
+    const index = 4;
+    if (currentIndex !== index)
+      gotoSection(index, currentIndex < index ? 1 : -1);
   });
-  // document.querySelector(".nav-faqs").addEventListener("click", () => {
-  // if (currentIndex !== 4) gotoSection(4, 1);
-  // });
   document.querySelector(".nav-contact").addEventListener("click", () => {
-  if (currentIndex !== 4) gotoSection(4, currentIndex < 4 ? 1 : -1);
+    const index = 5;
+    if (currentIndex !== index)
+      gotoSection(index, currentIndex < index ? 1 : -1);
   });
 }

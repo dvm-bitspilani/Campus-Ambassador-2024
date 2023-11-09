@@ -6,7 +6,7 @@ import LeftArrowImage from "../../public/Left.svg";
 import RightArrowImage from "../../public/Right.svg";
 import CarouselBox from "./CarouselBox";
 
-import { DATA } from "./data"
+import { DATA } from "./data";
 
 const sliderVariants = {
   incoming: (direction) => ({
@@ -49,7 +49,9 @@ const Testimonials = () => {
   return (
     <section className="testimonials">
       <div className="testimonials-container">
-        <div className="test-header">Testimonials</div>
+        <div className="test-header">
+          <h1>Testimonials</h1>
+        </div>
         <div className="test-carousel">
           <div className="carousel">
             <div className="sliderContainer">
