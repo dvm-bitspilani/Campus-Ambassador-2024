@@ -204,12 +204,12 @@ export default function gsapInit() {
         { x: 0 },
         { x: -10000, duration: 1.3, ease: "power2.inOut" }
       )
-        .fromTo("#mars-surface", { y: 0 }, { y: 400, duration: 0.3 }, "-=0.3")
+        .fromTo("#mars-surface", { y: 0 }, { y: 400, duration: 1 }, "-=0.3")
         .fromTo(
           section1,
           { autoAlpha: 1 },
           { autoAlpha: 0, ease: "power2.inOut", duration: 1 },
-          "-=0.3"
+          "-=0.5"
         )
         .fromTo(
           section2,

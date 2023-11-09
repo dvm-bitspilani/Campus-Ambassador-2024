@@ -28,7 +28,7 @@
 .nav-tabs li {
   cursor: pointer;
   position: relative;
-  transition: color 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .nav-tabs li::before {
@@ -61,7 +61,16 @@
   color: #242424;
   border-radius: 8px;
   background: #ebebeb;
+  text-decoration: none;
+
+  transition: all 0.5s ease-in-out;
 }
+
+.leaderboard:hover {
+  background: royalblue;
+  color: white;
+}
+
 @media (max-width: 1300px){
     .nav-tabs{
         gap: 1rem;
