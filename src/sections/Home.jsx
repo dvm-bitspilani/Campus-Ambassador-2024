@@ -22,10 +22,10 @@ const Home = ({isFormOpen, setIsFormOpen}) => {
   // const [isFormOpen, setIsFormOpen] = useState(false);
 
   const handleRegister = async () => {
-    await textControls.start({
-      opacity: 0,
-      display: "none",
-    });
+    // await textControls.start({
+    //   opacity: 0,
+    //   display: "none",
+    // });
     await Promise.all([ animateBox()]);
     setIsFormOpen(true)
   };
