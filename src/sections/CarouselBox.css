@@ -1,0 +1,29 @@
+.carousel-box {
+  display: flex;
+  border-radius: 18px;
+  background: #181e21;
+  padding: 4rem;
+  gap: 4rem;
+  scale: .75;
+  margin-top: -4rem;
+}
+.carousel-box-image{
+    border-radius: 16px;
+}
+.carousel-box-content{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.cb-content-heading {
+  color: #fff;
+  font-family: "Visby Medium";
+  font-size: 2.25rem;
+}
+.cb-content-desc {
+  color: #959da5;
+  text-align: justify;
+  font-family: "Visby Light";
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}

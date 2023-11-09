@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: center;
   padding: 4rem 6rem;
-  gap: 6rem;
+  gap: 4rem;
 }
 .contact-info {
   display: flex;
