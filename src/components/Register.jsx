@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Register.css";
 import Cross from "../../public/cross.svg";
 import Select from "react-select";
@@ -10,17 +10,15 @@ const Register = ({
   regControls,
   boxControls,
 }) => {
-  const colleges = [
-    { value: 1, label: "BITS Pilani" },
-    { value: 2, label: "IIT Delhi" },
-    { value: 3, label: "IIT Bombay" },
-    { value: 4, label: "IIT Dholakpur" },
-  ];
-  const city = [
-    { value: 1, label: "Pilani" },
-    { value: 2, label: "Delhi" },
-    { value: 3, label: "Mumbai" },
-    { value: 4, label: "Dholakpur" },
+
+  const [colleges, setColleges] = useState([])
+  const infoSources = [
+    { value: 1, label: "I received a call/mail/message" },
+    { value: 2, label: "D2C" },
+    { value: 3, label: "Internshala" },
+    { value: 4, label: "LinkedIn" },
+    { value: 5, label: "APOGEE Website" },
+    { value: 6, label: "Others" },
   ];
   const customStyleArray = [
     {
@@ -56,6 +54,35 @@ const Register = ({
     });
   };
 
+  useEffect(() => {
+    async function getColleges() {
+      try {
+        const res = await fetch(
+          "https://bits-apogee.org/collegeambassador/college",
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+
+        const data = await res.json();
+        setColleges(
+          data["data"].map((item) => {
+            return { value: item.id, label: item.name };
+          })
+        );
+      } catch (error) {
+        console.error("Error:", error.message);
+      }
+    }
+
+    getColleges();
+  }, []);
+
+  
+
   return (
     <div className="register">
       <div className="register-back" onClick={handleBack}>
@@ -81,7 +108,7 @@ const Register = ({
             </label>
             <Select
               options={colleges}
-              id="state"
+              id="college"
               styles={customStyleArray[0]}
               placeholder="Choose your College"
               // onFocus={(e) => {
@@ -102,24 +129,7 @@ const Register = ({
             <label htmlFor="college" className="input-label">
               College Location
             </label>
-            <Select
-              options={city}
-              id="state"
-              styles={customStyleArray[0]}
-              placeholder="Choose your City"
-              // onFocus={(e) => {
-              //   // e.target.placeholder = "";
-              //   e.target.parentElement.parentElement.parentElement.parentElement.previousSibling.classList.add(
-              //     styles.labelFocus
-              //   );
-              // }}
-              // onBlur={(e) => {
-              //   // e.target.placeholder = "Choose your state";
-              //   e.target.parentElement.parentElement.parentElement.parentElement.previousSibling.classList.remove(
-              //     styles.labelFocus
-              //   );
-              // }}
-            />
+            <input type="text" autoComplete="off" name="name" id="name" />
           </div>
           <div className="input-block">
             <label htmlFor="name" className="input-label">
@@ -145,12 +155,23 @@ const Register = ({
             <input type="text" autoComplete="off" name="name" id="name" />
           </div>
           <div className="info-source">
-            <input
-              type="text"
-              autoComplete="off"
-              name="name"
-              id="name"
+          <Select
+          className="info-source-select"
+              options={infoSources}
+              styles={customStyleArray[0]}
               placeholder="How did you come to know about Campus Ambassador Programme?"
+              // onFocus={(e) => {
+              //   // e.target.placeholder = "";
+              //   e.target.parentElement.parentElement.parentElement.parentElement.previousSibling.classList.add(
+              //     styles.labelFocus
+              //   );
+              // }}
+              // onBlur={(e) => {
+              //   // e.target.placeholder = "Choose your state";
+              //   e.target.parentElement.parentElement.parentElement.parentElement.previousSibling.classList.remove(
+              //     styles.labelFocus
+              //   );
+              // }}
             />
           </div>
           <button>Submit</button>

@@ -28,7 +28,7 @@
   align-items: center;
   margin-bottom: 1.5rem;
 }
-.info-source input[type="text"] {
+.info-source-select {
   width: 100%;
   font-size: 1.5rem;
   border: none;
@@ -52,7 +52,7 @@
   background: transparent;
   border-bottom: 1px solid #959da5;
 }
-#state {
+#college {
   width: 70%;
 }
 .year-of-study {

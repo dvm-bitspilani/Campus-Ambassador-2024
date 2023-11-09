@@ -87,6 +87,24 @@ export default function CustomStyles() {
             ...provided,
             overflow: "visible",
           }),
+          noOptionsMessage: (provided) => ({
+            ...provided,
+            color: "#fff",
+            fontFamily: "Visby Light",
+            fontSize: "1.25rem",
+            paddingLeft: "1rem",
+            backgroundColor: "#222222",
+            paddingTop: "0px",
+            paddingBottom: "0px",
+          }),
+          clearIndicator: (provided) => ({
+            ...provided,
+            color: '#fff',
+            '&:hover': {
+              color: '#5db3f1'
+            }
+          }),
+      
       
           
     }
