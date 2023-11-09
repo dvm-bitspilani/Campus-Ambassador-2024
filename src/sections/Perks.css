@@ -51,6 +51,7 @@
 .perks-right-bottom{
     height: 100%;
 }
+
 @media(max-width: 1300px){
     .perks-container{
         scale: .85;
