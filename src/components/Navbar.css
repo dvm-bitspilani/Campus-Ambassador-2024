@@ -1,3 +1,7 @@
+:root{
+  --hover-background-color: var(--primary-purple);
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -37,7 +41,7 @@
   bottom: 0;
   width: 100%;
   height: 0%;
-  background: royalblue;
+  background: var(--hover-background-color);
   background-repeat: no-repeat;
   z-index: -1;
   
@@ -67,7 +71,7 @@
 }
 
 .leaderboard:hover {
-  background: royalblue;
+  background: var(--hover-background-color);
   color: white;
 }
 

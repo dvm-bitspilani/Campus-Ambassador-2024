@@ -29,8 +29,8 @@
 }
 .about-heading h1 span {
   /* text-decoration: underline; */
-  color: #7855ef;
-  border-bottom: 4px solid #7855ef;
+  color: var(--primary-purple);
+  border-bottom: 4px solid var(--primary-purple);
 }
 .about-desc {
   margin-top: 2rem;

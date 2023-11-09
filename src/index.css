@@ -1,149 +1,150 @@
 @font-face {
-  font-family: 'Visby Regular';
+  font-family: "Visby Regular";
   font-style: normal;
   font-weight: normal;
-  src: local('Visby Regular'), url('../public/fonts/VisbyRegular.woff') format('woff');
-  }
-  
+  src: local("Visby Regular"),
+    url("../public/fonts/VisbyRegular.woff") format("woff");
+}
 
-  @font-face {
-  font-family: 'Visby Bold Italic';
+@font-face {
+  font-family: "Visby Bold Italic";
   font-style: normal;
   font-weight: normal;
-  src: local('Visby Bold Italic'), url('../public/fonts/VisbyBold Italic.woff') format('woff');
-  }
-  
+  src: local("Visby Bold Italic"),
+    url("../public/fonts/VisbyBold Italic.woff") format("woff");
+}
 
-  @font-face {
-  font-family: 'Visby Bold';
+@font-face {
+  font-family: "Visby Bold";
   font-style: normal;
   font-weight: normal;
-  src: local('Visby Bold'), url('../public/fonts/VisbyBold.woff') format('woff');
-  }
-  
+  src: local("Visby Bold"), url("../public/fonts/VisbyBold.woff") format("woff");
+}
 
-  @font-face {
-  font-family: 'Visby Extrabold Italic';
+@font-face {
+  font-family: "Visby Extrabold Italic";
   font-style: normal;
   font-weight: normal;
-  src: local('Visby Extrabold Italic'), url('../public/fonts/VisbyExtrabold Italic.woff') format('woff');
-  }
-  
+  src: local("Visby Extrabold Italic"),
+    url("../public/fonts/VisbyExtrabold Italic.woff") format("woff");
+}
 
-  @font-face {
-  font-family: 'Visby Extrabold';
+@font-face {
+  font-family: "Visby Extrabold";
   font-style: normal;
   font-weight: normal;
-  src: local('Visby Extrabold'), url('../public/fonts/VisbyExtrabold.woff') format('woff');
-  }
-  
+  src: local("Visby Extrabold"),
+    url("../public/fonts/VisbyExtrabold.woff") format("woff");
+}
 
-  @font-face {
-  font-family: 'Visby Heavy Italic';
+@font-face {
+  font-family: "Visby Heavy Italic";
   font-style: normal;
   font-weight: normal;
-  src: local('Visby Heavy Italic'), url('../public/fonts/VisbyHeavy Italic.woff') format('woff');
-  }
-  
+  src: local("Visby Heavy Italic"),
+    url("../public/fonts/VisbyHeavy Italic.woff") format("woff");
+}
 
-  @font-face {
-  font-family: 'Visby Heavy';
+@font-face {
+  font-family: "Visby Heavy";
   font-style: normal;
   font-weight: normal;
-  src: local('Visby Heavy'), url('../public/fonts/VisbyHeavy.woff') format('woff');
-  }
-  
+  src: local("Visby Heavy"),
+    url("../public/fonts/VisbyHeavy.woff") format("woff");
+}
 
-  @font-face {
-  font-family: 'Visby Italic';
+@font-face {
+  font-family: "Visby Italic";
   font-style: normal;
   font-weight: normal;
-  src: local('Visby Italic'), url('../public/fonts/VisbyItalic.woff') format('woff');
-  }
-  
+  src: local("Visby Italic"),
+    url("../public/fonts/VisbyItalic.woff") format("woff");
+}
 
-  @font-face {
-  font-family: 'Visby Light Italic';
+@font-face {
+  font-family: "Visby Light Italic";
   font-style: normal;
   font-weight: normal;
-  src: local('Visby Light Italic'), url('../public/fonts/VisbyLight Italic.woff') format('woff');
-  }
-  
+  src: local("Visby Light Italic"),
+    url("../public/fonts/VisbyLight Italic.woff") format("woff");
+}
 
-  @font-face {
-  font-family: 'Visby Light';
+@font-face {
+  font-family: "Visby Light";
   font-style: normal;
   font-weight: normal;
-  src: local('Visby Light'), url('../public/fonts/VisbyLight.woff') format('woff');
-  }
-  
+  src: local("Visby Light"),
+    url("../public/fonts/VisbyLight.woff") format("woff");
+}
 
-  @font-face {
-  font-family: 'Visby Medium Italic';
+@font-face {
+  font-family: "Visby Medium Italic";
   font-style: normal;
   font-weight: normal;
-  src: local('Visby Medium Italic'), url('../public/fonts/VisbyMedium Italic.woff') format('woff');
-  }
-  
+  src: local("Visby Medium Italic"),
+    url("../public/fonts/VisbyMedium Italic.woff") format("woff");
+}
 
-  @font-face {
-  font-family: 'Visby Medium';
+@font-face {
+  font-family: "Visby Medium";
   font-style: normal;
   font-weight: normal;
-  src: local('Visby Medium'), url('../public/fonts/VisbyMedium.woff') format('woff');
-  }
-  
+  src: local("Visby Medium"),
+    url("../public/fonts/VisbyMedium.woff") format("woff");
+}
 
-  @font-face {
-  font-family: 'Visby Semibold Italic';
+@font-face {
+  font-family: "Visby Semibold Italic";
   font-style: normal;
   font-weight: normal;
-  src: local('Visby Semibold Italic'), url('../public/fonts/VisbySemibold Italic.woff') format('woff');
-  }
-  
+  src: local("Visby Semibold Italic"),
+    url("../public/fonts/VisbySemibold Italic.woff") format("woff");
+}
 
-  @font-face {
-  font-family: 'Visby Semibold';
+@font-face {
+  font-family: "Visby Semibold";
   font-style: normal;
   font-weight: normal;
-  src: local('Visby Semibold'), url('../public/fonts/VisbySemibold.woff') format('woff');
-  }
-  
+  src: local("Visby Semibold"),
+    url("../public/fonts/VisbySemibold.woff") format("woff");
+}
 
-  @font-face {
-  font-family: 'Visby Thin Italic';
+@font-face {
+  font-family: "Visby Thin Italic";
   font-style: normal;
   font-weight: normal;
-  src: local('Visby Thin Italic'), url('../public/fonts/VisbyThin Italic.woff') format('woff');
-  }
-  
+  src: local("Visby Thin Italic"),
+    url("../public/fonts/VisbyThin Italic.woff") format("woff");
+}
 
-  @font-face {
-  font-family: 'Visby Thin';
+@font-face {
+  font-family: "Visby Thin";
   font-style: normal;
   font-weight: normal;
-  src: local('Visby Thin'), url('../public/fonts/VisbyThin.woff') format('woff');
-  }
+  src: local("Visby Thin"), url("../public/fonts/VisbyThin.woff") format("woff");
+}
 
 :root {
-  font-family: 'Visby Semibold';
+  font-family: "Visby Semibold";
 
   color-scheme: light dark;
   color: #fff;
-  background: #111112;;
+  background: #111112;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --primary-purple: #7855ef;
 }
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body{
+body {
   background: url(../public/bg.jpg);
   background-position-y: 0%;
   background-repeat: repeat;

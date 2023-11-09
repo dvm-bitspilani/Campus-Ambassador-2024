@@ -47,7 +47,7 @@
   text-decoration: none;
 }
 .contact-desc {
-  color: #7855ef;
+  color: var(--primary-purple);
   font-family: "Visby Light";
   font-size: 1.5rem;
   text-decoration-line: underline;
