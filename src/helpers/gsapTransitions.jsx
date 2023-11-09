@@ -8,7 +8,6 @@ export default function gsapInit() {
   let isFormOpen = false;
 
   document.querySelector(".home-register-button").addEventListener("click", () => {
-    console.log("register clicked");
     // On mouse down on .home-register-button, isFormOpen is set to true
     isFormOpen = true;
 
@@ -17,7 +16,6 @@ export default function gsapInit() {
     // On mouse down on .register-back button, isFormOpen is set to false
     setTimeout(() => {
     document.querySelector(".register-back").addEventListener("click", () => {
-      console.log("back clicked");
       isFormOpen = false;
     });
     }, 200);
@@ -407,6 +405,8 @@ export default function gsapInit() {
 
     animating = true;
 
+    console.log({currentIndex, index, direction})
+
     if (currentIndex === 0 || (currentIndex === 1 && index === 0)) {
       transition1(direction);
     } else if (currentIndex === 1 || (currentIndex === 2 && index === 1)) {
@@ -420,7 +420,7 @@ export default function gsapInit() {
   }
 
   // Observer
-  const mainObserver = Observer.create({
+  Observer.create({
     targets: "body",
     type: "wheel,touch,pointer",
     wheelSpeed: -1,
@@ -431,5 +431,23 @@ export default function gsapInit() {
     preventDefault: true,
   });
 
-  return mainObserver;
+  // On click of nav icons, goToSection is called
+  document.querySelector(".nav-home").addEventListener("click", () => {
+  if (currentIndex !== 0) gotoSection(0, -1);
+  });
+  document.querySelector(".nav-perks").addEventListener("click", () => {
+  if (currentIndex !== 2) gotoSection(2, currentIndex < 2 ? 1 : -1);
+  });
+  // document.querySelector(".nav-testimonials").addEventListener("click", () => {
+  // if (currentIndex !== 2) gotoSection(10, 1);
+  // });
+  document.querySelector(".nav-responsibilities").addEventListener("click", () => {
+  if (currentIndex !== 3) gotoSection(3, currentIndex < 3 ? 1 : -1);
+  });
+  // document.querySelector(".nav-faqs").addEventListener("click", () => {
+  // if (currentIndex !== 4) gotoSection(4, 1);
+  // });
+  document.querySelector(".nav-contact").addEventListener("click", () => {
+  if (currentIndex !== 4) gotoSection(4, currentIndex < 4 ? 1 : -1);
+  });
 }

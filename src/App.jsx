@@ -1,6 +1,6 @@
 import "./App.css";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 
 import Navbar from "./components/Navbar";
 import Home from "./sections/Home";
@@ -17,30 +17,10 @@ function App() {
   // useref for gsap observer
   // const mainObserver = useRef(null);
   const [isFormOpen, setIsFormOpen] = useState(false);
-
-  const mainObserver = useRef(null);
   
   useEffect(() => {
-    // if (!isFormOpen) {
-    //   mainObserver.current = gsapInit(isFormOpen);
-    // } else if (isFormOpen) mainObserver.current.kill();
-    // console.log("isFormOpen : ", isFormOpen);
-
-    mainObserver.current = gsapInit(isFormOpen);
+    gsapInit();
   }, []);
-  
-  // useEffect(() => {
-  //   const mainObserver = Observer.getById("mainObserver");
-  //   if (mainObserver === null) return;
-
-  //   if (isFormOpen){
-  //     mainObserver.disable()
-  //   } else if (!isFormOpen){
-  //     mainObserver.enable()
-  //   }
-
-  //   console.log("observer : ", mainObserver);
-  // }, [isFormOpen]);
 
   return (
     <>
