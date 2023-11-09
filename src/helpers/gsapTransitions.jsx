@@ -92,6 +92,7 @@ export default function gsapInit() {
       tl.fromTo(".left-satellite", { x: 0 }, { x: -1000 })
         .fromTo(".right-satellite", { x: 0 }, { x: 1000 }, 0)
         .fromTo(".home-register", { autoAlpha: 1 }, { autoAlpha: 0 }, 0)
+        .fromTo(".home-heading-wrapper", { autoAlpha: 1 }, { autoAlpha: 0 }, 0)
         .fromTo(
           section1,
           { autoAlpha: 1 },
@@ -142,7 +143,8 @@ export default function gsapInit() {
         )
         .fromTo(".left-satellite", { x: -1000 }, { x: 0 }, ">")
         .fromTo(".right-satellite", { x: 1000 }, { x: 0 }, "<")
-        .fromTo(".home-register", { autoAlpha: 0 }, { autoAlpha: 1 }, "<");
+        .fromTo(".home-register", { autoAlpha: 0 }, { autoAlpha: 1 }, "<")
+        .fromTo(".home-heading-wrapper", { autoAlpha: 0 }, { autoAlpha: 1 }, "<");
     }
   }
 
