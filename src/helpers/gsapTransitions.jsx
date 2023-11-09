@@ -6,6 +6,13 @@ export default function gsapInit() {
 
   // console.log("isFormOpen (inside function) : ", isFormOpen);
   let isFormOpen = false;
+  let isHome = document.querySelector(".leaderboard-nav-leaderboard") === null;
+
+  if (isHome) {
+    document.querySelector(".leaderboard").addEventListener("click", () => {
+      isHome = false;
+    });
+  }
 
   document
     .querySelector(".home-register-button")
@@ -147,7 +154,12 @@ export default function gsapInit() {
         .fromTo(".left-satellite", { x: -1000 }, { x: 0 }, ">")
         .fromTo(".right-satellite", { x: 1000 }, { x: 0 }, "<")
         .fromTo(".home-register", { autoAlpha: 0 }, { autoAlpha: 1 }, "<")
-        .fromTo(".home-heading-wrapper", { autoAlpha: 0 }, { autoAlpha: 1 }, "<");
+        .fromTo(
+          ".home-heading-wrapper",
+          { autoAlpha: 0 },
+          { autoAlpha: 1 },
+          "<"
+        );
     }
   }
 
@@ -650,8 +662,9 @@ export default function gsapInit() {
     type: "wheel,touch,pointer",
     wheelSpeed: -1,
     onDown: () =>
-      !animating && !isFormOpen && gotoSection(currentIndex - 1, -1),
-    onUp: () => !animating && !isFormOpen && gotoSection(currentIndex + 1, 1),
+      isHome && !animating && !isFormOpen && gotoSection(currentIndex - 1, -1),
+    onUp: () =>
+      isHome && !animating && !isFormOpen && gotoSection(currentIndex + 1, 1),
     tolerance: 50,
     preventDefault: true,
   });
