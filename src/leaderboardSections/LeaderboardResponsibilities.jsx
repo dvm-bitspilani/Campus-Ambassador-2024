@@ -9,7 +9,7 @@ export default function LeaderboardResponsibilities() {
       </div>
       <div className="leaderboard-incentives-container">
         <h2 className="incentive-title">
-          ENSURING MAXIMUM PARTICIPATION IN APOGEE 2023
+          ENSURING MAXIMUM PARTICIPATION IN APOGEE 2024
         </h2>
         <span>
           The primary task of every Campus Ambassador is to ensure maximum
@@ -37,7 +37,7 @@ export default function LeaderboardResponsibilities() {
           <ol>
             <li>
               <p>
-                Sharing of all posts of APOGEE 2023 via your Facebook Account.
+                Sharing of all posts of APOGEE 2024 via your Facebook Account.
               </p>
               <p>Points Allocation: Each post = 50 points</p>
               <p>Each Share =20 points</p>
@@ -47,19 +47,19 @@ export default function LeaderboardResponsibilities() {
               </p>
             </li>
             <li>
-              <p>Sharing Facebook Stories about APOGEE 2023</p>
+              <p>Sharing Facebook Stories about APOGEE 2024</p>
               <p>Points Allocation: 1 story = 10 points</p>
-              <p>This will be monitored by your point of contact from BITS</p>
               <p>
-                Pilani after you send them a screenshot that mentions the story
-                being updated at least 10 hours ago.
+                This will be monitored by your point of contact from BITS Pilani
+                after you send them a screenshot that mentions the story being
+                updated at least 10 hours ago.
               </p>
             </li>
           </ol>
           <li>INSTAGRAM</li>
           <ol>
             <li>
-              <p>Sharing Instagram Stories about APOGEE 2023</p>
+              <p>Sharing Instagram Stories about APOGEE 2024</p>
               <p>
                 Points Allocation: 1 story = 50 points (see table at the end of
                 the document for another metric for points)
@@ -74,11 +74,11 @@ export default function LeaderboardResponsibilities() {
           <li>WHATSAPP</li>
           <ol>
             <li>
-              <p>Sending messages to Whatsapp contacts about APOGEE 2023</p>
+              <p>Sending messages to Whatsapp contacts about APOGEE 2024</p>
             </li>
             <li>
               <p>
-                Sharing WhatsApp Stories about APOGEE 2023 Points Allocation: 1
+                Sharing WhatsApp Stories about APOGEE 2024 Points Allocation: 1
                 story = 30 points
               </p>
               <p>
