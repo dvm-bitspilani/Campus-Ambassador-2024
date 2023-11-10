@@ -54,7 +54,7 @@ export default function LeaderboardPoints() {
             </div>
           </div>
           <li>One Routemail = <span>500</span> points</li>
-          <li>Workshop/Minifest = <span>2023</span> points (minimum 40 participants)</li>
+          <li>Workshop/Minifest = <span>2024</span> points (minimum 40 participants)</li>
           <li>Informative Sessions = <span>200</span> per session (minimum 40 participants)</li>
           <li>CA Referrals = <span>800</span> per person referred to the CA programme(Must be from different college than yours)</li>
         </ol>
