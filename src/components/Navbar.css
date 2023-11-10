@@ -16,6 +16,8 @@
   font-family: "Visby Semibold";
   font-size: 2rem;
   letter-spacing: 1.6px;
+  text-decoration: none;
+  color: white;
 }
 .nav-tabs {
   display: flex;
