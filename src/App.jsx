@@ -1,6 +1,6 @@
 import "./App.css";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 import Navbar from "./components/Navbar";
 import Home from "./sections/Home";
@@ -15,11 +15,15 @@ import gsapInit from "./helpers/gsapTransitions";
 function App() {
 
   // useref for gsap observer
-  // const mainObserver = useRef(null);
+  const mainObserver = useRef(null);
   const [isFormOpen, setIsFormOpen] = useState(false);
-  
+
   useEffect(() => {
-    gsapInit();
+    mainObserver.current = gsapInit();
+
+    return () => {
+      mainObserver.current.kill();
+    };
   }, []);
 
   return (

@@ -138,6 +138,8 @@
   -webkit-text-size-adjust: 100%;
 
   --primary-purple: #7855ef;
+  --primary-black: #181E21;
+  --primary-grey: #959DA5;
 }
 * {
   margin: 0;

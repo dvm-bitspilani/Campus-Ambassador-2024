@@ -6,13 +6,15 @@ export default function gsapInit() {
 
   // console.log("isFormOpen (inside function) : ", isFormOpen);
   let isFormOpen = false;
-  let isHome = document.querySelector(".leaderboard-nav-leaderboard") === null;
+  let isHome = true;
 
-  if (isHome) {
-    document.querySelector(".leaderboard").addEventListener("click", () => {
-      isHome = false;
-    });
-  }
+  // let isHome = document.querySelector(".leaderboard-nav-leaderboard") === null;
+
+  // if (isHome) {
+  //   document.querySelector(".leaderboard").addEventListener("click", () => {
+  //     isHome = false;
+  //   });
+  // }
 
   document
     .querySelector(".home-register-button")
@@ -657,7 +659,7 @@ export default function gsapInit() {
   }
 
   // Observer
-  Observer.create({
+  const mainObserver = Observer.create({
     targets: "body",
     type: "wheel,touch,pointer",
     wheelSpeed: -1,
@@ -696,4 +698,6 @@ export default function gsapInit() {
     if (currentIndex !== index)
       gotoSection(index, currentIndex < index ? 1 : -1);
   });
+
+  return mainObserver;
 }
