@@ -81,14 +81,14 @@ export default function LeaderboardIncentives() {
           irrespective of him standing in the leaderboard.
         </span>
         <h2 className="incentive-title">
-          Certificate of Excellence from APOGEE 2023
+          Certificate of Excellence from APOGEE 2024
         </h2>
         <span>
           All Campus Ambassadors will receive a certificate of excellence from
-          APOGEE 2023.
+          APOGEE 2024.
         </span>
         <span>
-          Please note that APOGEE 2023 reserves all rights of discretion in case
+          Please note that APOGEE 2024 reserves all rights of discretion in case
           of any discrepancy, ties or confusions. In case there are any changes
           in the above-mentioned details, all campus ambassadors will be well
           informed.
@@ -111,7 +111,7 @@ export default function LeaderboardIncentives() {
         <h2 className="incentive-title">Reimbursements</h2>
         <span>
           Food Coupons: Free food coupons worth Rs. 800 at food stalls during
-          APOGEE 2023.
+          APOGEE 2024.
         </span>
         <span>
           Travel Reimbursements: Campus Ambassadors based on Leaderboard qualify
