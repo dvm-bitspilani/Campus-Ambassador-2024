@@ -23,7 +23,36 @@
   background: #181e21;
   padding: 2rem;
   height: 100%;
+
+  cursor: pointer;
+
+  border : 1px solid rgba(255, 255, 255, 0.1);
 }
+.perks-animatable1{
+  position: relative;
+}
+.perks-box::after{
+  background: radial-gradient(
+    800px circle at var(--mouse-x) var(--mouse-y), 
+    rgba(255, 255, 255, 0.06),
+    transparent 40%
+  );
+  z-index: 3;
+  border-radius: inherit;
+  content: "";
+  height: 100%;
+  left: 0px;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  transition: opacity 500ms;
+  width: 100%;
+}
+
+.perks-box:hover::after{
+  opacity: 1;
+}
+
 .perks-box-heading {
   color: #fff;
   font-family: "Visby Light";
