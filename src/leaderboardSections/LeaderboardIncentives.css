@@ -57,7 +57,6 @@
 }
 
 .leaderboard-incentives-container li {
-  list-style: circle;
   font-family: "Visby Regular";
   font-size: 1.5rem;
   color: #fafafa;
@@ -65,7 +64,20 @@
   font-weight: 200;
 }
 
-.leaderboard-incentives-container span {
+.leaderboard-incentives-container>ul>li {
+  list-style: circle;
+}
+.leaderboard-incentives-container li p{
+  margin-bottom: 1rem;
+}
+.leaderboard-incentives-container ol ul li{
+  list-style: none;
+}
+.leaderboard-incentives-container ol>ol{
+  margin-inline: 2rem;
+}
+
+.leaderboard-incentives-container>span {
   font-family: "Visby Regular";
   font-size: 1.5rem;
   color: #fafafa;
@@ -86,7 +98,7 @@
   color: var(--primary-grey);
 }
 
-.leaderboard-incentives-container ul {
+.leaderboard-incentives-container ul, .leaderboard-incentives-container ol {
   width: 90%;
   margin-bottom: 2rem;
 }

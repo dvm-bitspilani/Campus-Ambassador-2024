@@ -3,6 +3,8 @@ import React from 'react'
 import Navbar from './components/LeaderboardNavbar'
 import LeaderboardHome from './leaderboardSections/leaderboardHome'
 import LeaderboardIncentives from './leaderboardSections/LeaderboardIncentives';
+import LeaderboardResponsibilities from './leaderboardSections/LeaderboardResponsibilities';
+import LeaderboardPoints from './leaderboardSections/LeaderboardPoints';
 
 import {motion} from "framer-motion";
 
@@ -27,6 +29,8 @@ export default function Leaderboard() {
     <Navbar />
     <LeaderboardHome />
     <LeaderboardIncentives />
+    <LeaderboardResponsibilities />
+    <LeaderboardPoints />
   </motion.div>
   )
 }

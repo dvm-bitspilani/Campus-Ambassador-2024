@@ -6,8 +6,6 @@ export default function gsapInit() {
 
   const sections = document.querySelectorAll("section");
 
-  console.log(sections);
-
   // sections 1 to end should have alpha 0
   gsap.set(sections, { autoAlpha: 0, zIndex: 0 });
   gsap.set(sections[0], { autoAlpha: 1, zIndex: 1 });
@@ -134,18 +132,18 @@ export default function gsapInit() {
         gotoSection(index, currentIndex < index ? 1 : -1);
     });
 
-  // document
-  //   .querySelector(".leaderboard-nav-responsibilities")
-  //   .addEventListener("click", () => {
-  //     const index = 3;
-  //     if (currentIndex !== index && !animating)
-  //       gotoSection(index, currentIndex < index ? 1 : -1);
-  //   });
-  // document
-  //   .querySelector(".leaderboard-nav-points")
-  //   .addEventListener("click", () => {
-  //     const index = 4;
-  //     if (currentIndex !== index && !animating)
-  //       gotoSection(index, currentIndex < index ? 1 : -1);
-  //   });
+  document
+    .querySelector(".leaderboard-nav-responsibilities")
+    .addEventListener("click", () => {
+      const index = 2;
+      if (currentIndex !== index && !animating)
+        gotoSection(index, currentIndex < index ? 1 : -1);
+    });
+  document
+    .querySelector(".leaderboard-nav-points")
+    .addEventListener("click", () => {
+      const index = 3;
+      if (currentIndex !== index && !animating)
+        gotoSection(index, currentIndex < index ? 1 : -1);
+    });
 }
