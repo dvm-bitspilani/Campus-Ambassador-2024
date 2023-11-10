@@ -1,27 +1,16 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import Leaderboard from './Leaderboard.jsx'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import "./index.css";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-  },
-  {
-    path: "/leaderboard",
-    element: <Leaderboard />,
-  },
-]);
+import AnimationWrapper from "./AnimationWrapper";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+import { BrowserRouter as Router } from "react-router-dom";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>,
-)
+    <Router>
+      <AnimationWrapper />
+    </Router>
+  </React.StrictMode>
+);

@@ -12,6 +12,8 @@ import Contact from "./sections/Contact";
 
 import gsapInit from "./helpers/gsapTransitions";
 
+import {motion} from "framer-motion";
+
 function App() {
 
   // useref for gsap observer
@@ -27,7 +29,12 @@ function App() {
   }, []);
 
   return (
-    <>
+    <motion.div 
+      initial={{opacity: 0, y: 100}}
+      animate={{opacity: 1, y: 0}}
+      exit={{opacity: 0, y: -100}}
+      transition={{duration: 1, ease: "easeInOut", delay: 0}}
+    >
       <Navbar />
       <Home isFormOpen={isFormOpen} setIsFormOpen={setIsFormOpen}/>
       <About />
@@ -35,7 +42,7 @@ function App() {
       <Responsibility />
       <Testimonials />
       <Contact />
-    </>
+    </motion.div>
   );
 }
 
