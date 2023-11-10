@@ -171,7 +171,7 @@ export default function gsapInit() {
 
     const tl = gsap.timeline({
       defaults: {
-        duration: 1,
+        duration: 0.6,
         ease: "power2.inOut",
       },
       onStart: () => {
@@ -223,7 +223,7 @@ export default function gsapInit() {
           section1,
           { autoAlpha: 1 },
           { autoAlpha: 0, ease: "power2.inOut", duration: 1 },
-          "-=0.5"
+          "-=0.8"
         )
         .fromTo(
           section2,
@@ -234,8 +234,8 @@ export default function gsapInit() {
         .fromTo(
           boxAnimatables1,
           { scale: 0 },
-          { scale: 1, ease: "power2.inOut", stagger: 0.15 },
-          "-=0.3"
+          { scale: 1, ease: "power2.inOut", stagger: 0.2 },
+          "-=0.5"
         )
         .fromTo(
           "body",
@@ -450,7 +450,7 @@ export default function gsapInit() {
 
     const tl = gsap.timeline({
       defaults: {
-        duration: 1,
+        duration: 0.8,
         ease: "power2.inOut",
       },
       onStart: () => {

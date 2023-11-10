@@ -2,22 +2,20 @@ import React from "react";
 
 import "./leaderboardHome.css";
 
+import { motion } from "framer-motion";
+
 export default function LeaderboardHome() {
   const [leaderboard, setLeaderboard] = React.useState([]);
 
   React.useEffect(() => {
-    setLeaderboard([
-      { rank: 1, name: "Aishna Shrivastava", points: 100 },
-      { rank: 2, name: "Keya Shah", points: 90 },
-      { rank: 3, name: "Ritika Singh", points: 80 },
-      { rank: 4, name: "Keya Shah", points: 70 },
-      { rank: 5, name: "Ritika Singh", points: 60 },
-      { rank: 6, name: "Keya Shah", points: 50 },
-      { rank: 7, name: "Ritika Singh", points: 40 },
-      { rank: 8, name: "Keya Shah", points: 30 },
-      { rank: 9, name: "Ritika Singh", points: 20 },
-      { rank: 10, name: "Keya Shah", points: 10 },
-    ]);
+    async function fetchData() {
+      const response = await fetch(
+        "https://bits-apogee.org/collegeambassador/leaderboard"
+      );
+      const data = await response.json();
+      setLeaderboard(data.data);
+    }
+    fetchData();
   }, []);
 
   const leaderboardList = leaderboard.map((item, index) => {
@@ -36,7 +34,11 @@ export default function LeaderboardHome() {
         <span>Leaderboard</span>
       </div>
       <div className="leaderboard-home-wrapper">
-        <div className="leaderboard-home-container">{leaderboardList}</div>
+        {leaderboardList.length && (
+          <motion.div className="leaderboard-home-container" initial={{scale : 0}} animate={{scale : 1}} transition={{duration : 0.5}}>
+            {leaderboardList}
+          </motion.div>
+        )}
       </div>
     </section>
   );
