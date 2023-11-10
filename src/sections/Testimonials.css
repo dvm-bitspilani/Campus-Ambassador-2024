@@ -5,6 +5,9 @@
   justify-content: center;
   align-items: center;
 }
+.test-header{
+    margin-top: 2rem;
+}
 .test-header, .test-header h1{
   color: #fafafa;
   font-family: "Visby Bold";

@@ -61,7 +61,7 @@ const Register = ({
   const [colleges, setColleges] = useState([]);
   const infoSources = [
     { value: 1, label: "I received a call/mail/message" },
-    { value: 2, label: "D2C" },
+    { value: 2, label: "Unstop (D2C)" },
     { value: 3, label: "Internshala" },
     { value: 4, label: "LinkedIn" },
     { value: 5, label: "APOGEE Website" },

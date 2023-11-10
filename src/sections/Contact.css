@@ -5,6 +5,9 @@
   align-items: center;
   flex-direction: column;
 }
+.contact-heading{
+  margin-top: 5rem;
+}
 .contact-heading span {
   color: #fafafa;
   font-family: "Visby Bold";
@@ -13,7 +16,7 @@
 }
 .contact-container {
   width: 75%;
-  margin-top: 3rem;
+  margin-top: 1rem;
   border-radius: 11.339px;
   background: #181e21;
   display: flex;

@@ -45,12 +45,12 @@
 }
 .about-surface {
   position: absolute;
-  bottom: -10px;
+  bottom: -30px;
 }
 .about-rover{
     scale: .75;
     position: absolute;
-    bottom: 0px;
+    bottom: -50px;
     right: 10vw;
 }
 @media(max-width: 1300px){

@@ -8,6 +8,7 @@
     width: 85%;
     display: flex;
     gap: 1rem;
+    margin-top: 2rem;
 }
 .respo-heading{
     text-align: center;
