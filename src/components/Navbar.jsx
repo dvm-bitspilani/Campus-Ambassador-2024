@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom'
+import gsap from 'gsap'
 import './Navbar.css'
 
 const Navbar = () => {
+  const handleLeaderboard = () => {
+    gsap.to("body", {backgroundPositionY: "0%", duration: 1})
+  }
   return (
     <div className="navbar">
         <div className="nav-heading">APOGEE &apos;24</div>
@@ -12,7 +16,7 @@ const Navbar = () => {
             <li className='nav-testimonials'>Testimonials</li>
             <li className='nav-faqs'>FAQs</li>
             <li className='nav-contact'>Contact Us</li>
-            <Link to="/leaderboard" className="leaderboard">Leaderboard</Link>
+            <Link to="/leaderboard" className="leaderboard" onClick={handleLeaderboard}>Leaderboard</Link>
         </ul>
     </div>
   )
