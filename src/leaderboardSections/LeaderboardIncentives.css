@@ -76,6 +76,9 @@
 .leaderboard-incentives-container ol>ol{
   margin-inline: 2rem;
 }
+.leaderboard-incentives-container>ol>li>span{
+  font-family: "Visby Bold";
+}
 
 .leaderboard-incentives-container>span {
   font-family: "Visby Regular";
@@ -101,6 +104,38 @@
 .leaderboard-incentives-container ul, .leaderboard-incentives-container ol {
   width: 90%;
   margin-bottom: 2rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.social-container{
+  width: 85%;
+  height: 90px;
+  margin-bottom: 2rem;
+
+  display: flex;
+  align-self: center;
+
+  gap: 2rem;
+}
+.social-points-container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.social-points-p{
+  font-family: "Visby Regular";
+  font-size: 1.3rem;
+  color: #fafafa;
+  text-align: left;
+  width: 100%;
+}
+.social-points-p span{
+  font-family: "Visby Bold";
 }
 
 @media screen and (max-height: 760px) {
