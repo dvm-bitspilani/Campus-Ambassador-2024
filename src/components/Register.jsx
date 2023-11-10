@@ -5,6 +5,7 @@ import Select from "react-select";
 import CustomStyles from "./CustomStyle";
 import { useFormik } from "formik";
 import { regSchema } from "../schemas";
+import collegesData from "./colleges.json";
 
 const initialValues = {
   email: "",
@@ -101,30 +102,11 @@ const Register = ({
   };
 
   useEffect(() => {
-    async function getColleges() {
-      try {
-        const res = await fetch(
-          "https://bits-apogee.org/collegeambassador/college",
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
-
-        const data = await res.json();
-        setColleges(
-          data["data"].map((item) => {
-            return { value: item.id, label: item.name };
-          })
-        );
-      } catch (error) {
-        console.error("Error:", error.message);
-      }
-    }
-
-    getColleges();
+    setColleges(
+      collegesData["data"].map((item) => {
+        return { value: item.id, label: item.name };
+      })
+    );
   }, []);
 
   return (
