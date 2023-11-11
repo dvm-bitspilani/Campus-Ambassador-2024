@@ -118,32 +118,35 @@ export default function gsapInit() {
 
   // Adding event listeners to navigation buttons
   // On click of nav icons, goToSection is called
-  document
-    .querySelector(".leaderboard-nav-leaderboard")
-    .addEventListener("click", () => {
+  document.querySelectorAll(".leaderboard-nav-leaderboard").forEach((nav) => {
+    nav.addEventListener("click", () => {
       const index = 0;
-      if (currentIndex !== index && !animating) gotoSection(index, -1);
+      if (currentIndex !== index && !animating)
+        gotoSection(index, currentIndex < index ? 1 : -1);
     });
-  document
-    .querySelector(".leaderboard-nav-incentives")
-    .addEventListener("click", () => {
+  });
+  document.querySelectorAll(".leaderboard-nav-incentives").forEach((nav) => {
+    nav.addEventListener("click", () => {
       const index = 1;
       if (currentIndex !== index && !animating)
         gotoSection(index, currentIndex < index ? 1 : -1);
     });
+  });
 
   document
-    .querySelector(".leaderboard-nav-responsibilities")
-    .addEventListener("click", () => {
-      const index = 2;
-      if (currentIndex !== index && !animating)
-        gotoSection(index, currentIndex < index ? 1 : -1);
+    .querySelectorAll(".leaderboard-nav-responsibilities")
+    .forEach((nav) => {
+      nav.addEventListener("click", () => {
+        const index = 2;
+        if (currentIndex !== index && !animating)
+          gotoSection(index, currentIndex < index ? 1 : -1);
+      });
     });
-  document
-    .querySelector(".leaderboard-nav-points")
-    .addEventListener("click", () => {
+  document.querySelectorAll(".leaderboard-nav-points").forEach((nav) => {
+    nav.addEventListener("click", () => {
       const index = 3;
       if (currentIndex !== index && !animating)
         gotoSection(index, currentIndex < index ? 1 : -1);
     });
+  });
 }

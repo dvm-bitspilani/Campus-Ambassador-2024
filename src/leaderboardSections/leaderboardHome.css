@@ -103,8 +103,8 @@
     }
 }
 @media screen and (max-height :760px) {
-  .leaderboard-home-container {
-    margin-top: 2rem;
+  .leaderboard-home-wrapper {
+    margin-top: 1.5rem;
   }
   .leaderboard-home-heading{
     margin-top: 5%;

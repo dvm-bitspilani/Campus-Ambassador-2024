@@ -672,31 +672,40 @@ export default function gsapInit() {
   });
 
   // On click of nav icons, goToSection is called
-  document.querySelector(".nav-home").addEventListener("click", () => {
-    const index = 0;
-    if (currentIndex !== index && !animating) gotoSection(index, -1);
+  document.querySelectorAll(".nav-home").forEach((nav) => {
+    nav.addEventListener("click", () => {
+      const index = 0;
+      if (currentIndex !== index && !animating)
+        gotoSection(index, -1);
+    });
   });
-  document.querySelector(".nav-perks").addEventListener("click", () => {
-    const index = 2;
-    if (currentIndex !== index && !animating)
-      gotoSection(index, currentIndex < index ? 1 : -1);
+  document.querySelectorAll(".nav-perks").forEach((nav) => {
+    nav.addEventListener("click", () => {
+      const index = 2;
+      if (currentIndex !== index && !animating)
+        gotoSection(index, currentIndex < index ? 1 : -1);
+    });
   });
-  document
-    .querySelector(".nav-responsibilities")
-    .addEventListener("click", () => {
+  document.querySelectorAll(".nav-responsibilities").forEach((nav) => {
+    nav.addEventListener("click", () => {
       const index = 3;
       if (currentIndex !== index && !animating)
         gotoSection(index, currentIndex < index ? 1 : -1);
     });
-  document.querySelector(".nav-testimonials").addEventListener("click", () => {
-    const index = 4;
-    if (currentIndex !== index && !animating)
-      gotoSection(index, currentIndex < index ? 1 : -1);
   });
-  document.querySelector(".nav-contact").addEventListener("click", () => {
-    const index = 5;
-    if (currentIndex !== index && !animating)
-      gotoSection(index, currentIndex < index ? 1 : -1);
+  document.querySelectorAll(".nav-testimonials").forEach((nav) => {
+    nav.addEventListener("click", () => {
+      const index = 4;
+      if (currentIndex !== index && !animating)
+        gotoSection(index, currentIndex < index ? 1 : -1);
+    });
+  });
+  document.querySelectorAll(".nav-contact").forEach((nav) => {
+    nav.addEventListener("click", () => {
+      const index = 5;
+      if (currentIndex !== index && !animating)
+        gotoSection(index, currentIndex < index ? 1 : -1);
+    });
   });
 
   return mainObserver;
