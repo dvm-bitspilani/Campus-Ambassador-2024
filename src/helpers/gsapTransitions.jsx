@@ -4,39 +4,6 @@ import { Observer } from "gsap/all";
 export default function gsapInit(isFormOpen) {
   gsap.registerPlugin(Observer);
 
-  // console.log("isFormOpen (inside function) : ", isFormOpen);
-  // let isFormOpen = false;
-  let isHome = true;
-
-  // let isHome = document.querySelector(".leaderboard-nav-leaderboard") === null;
-
-  // if (isHome) {
-  //   document.querySelector(".leaderboard").addEventListener("click", () => {
-  //     isHome = false;
-  //   });
-  // }
-
-  // document
-  //   .querySelector(".home-register-button")
-  //   .addEventListener("click", () => {
-  //     // On mouse down on .home-register-button, isFormOpen is set to true
-  //     isFormOpen = true;
-
-  //     document
-  //       .querySelector(".home-register-button")
-  //       .removeEventListener("click", () => {
-  //         isFormOpen = true;
-  //       });
-  //     // On mouse down on .register-back button, isFormOpen is set to false
-  //     setTimeout(() => {
-  //       document
-  //         .querySelector(".register-back")
-  //         .addEventListener("click", () => {
-  //           isFormOpen = false;
-  //         });
-  //     }, 200);
-  //   });
-
   const sections = document.querySelectorAll("section");
   const boxAnimatables1 = document.querySelectorAll(".perks-animatable1");
   const boxAnimatables2 = document.querySelectorAll(".box-animatable2");
@@ -448,6 +415,94 @@ export default function gsapInit(isFormOpen) {
     const section1 = sections[4];
     const section2 = sections[5];
 
+    const faqs = document.querySelectorAll(".MuiPaper-root");
+
+    const tl = gsap.timeline({
+      defaults: {
+        duration: 0.8,
+        ease: "power2.inOut",
+      },
+      onStart: () => {
+        if (direction === 1) {
+          gsap.set(section2, {
+            zIndex: 1,
+            autoAlpha: 1,
+          });
+        } else {
+          gsap.set(section1, {
+            autoAlpha: 0,
+            // zIndex: 1,
+          });
+          gsap.set(section2, {
+            zIndex: 0,
+            autoAlpha: 1,
+          });
+        }
+      },
+      onComplete: () => {
+        animating = false;
+        if (direction === 1) {
+          gsap.set(section1, {
+            autoAlpha: 0,
+            zIndex: 0,
+            yPercent: 0,
+          });
+        } else {
+          gsap.set(section2, {
+            zIndex: 0,
+          });
+        }
+      },
+    });
+
+    if (direction === 1) {
+      tl.fromTo(
+        section1,
+        { yPercent: 0 },
+        { yPercent: -100, ease: "power2.inOut" }
+      )
+        .fromTo(
+          section2,
+          { autoAlpha: 0 },
+          { autoAlpha: 1, ease: "power2.inOut" },
+          0
+        ).fromTo(
+          faqs,
+          { scale: 0 },
+          { scale: 1, ease: "power2.inOut", stagger: 0.2 },
+          ">"
+        )
+        .fromTo(
+          "body",
+          { backgroundPositionY: "40%" },
+          { backgroundPositionY: "50%", ease: "power2.inOut", duration: 2 },
+          0
+        );
+    } else {
+      tl.fromTo(
+        section1,
+        { autoAlpha: 0 },
+        { autoAlpha: 1, ease: "power2.inOut" }
+      )
+        .fromTo(
+          section2,
+          { autoAlpha: 1 },
+          { autoAlpha: 0, ease: "power2.inOut" },
+          "<"
+        )
+        .fromTo(
+          "body",
+          { backgroundPositionY: "50%" },
+          { backgroundPositionY: "40%" },
+          0
+        );
+    }
+  }
+
+  function transition6(direction) {
+    const section1 = sections[5];
+    const section2 = sections[6];
+
     const tl = gsap.timeline({
       defaults: {
         duration: 0.8,
@@ -504,8 +559,8 @@ export default function gsapInit(isFormOpen) {
         )
         .fromTo(
           "body",
-          { backgroundPositionY: "40%" },
-          { backgroundPositionY: "50%", ease: "power2.inOut", duration: 2 },
+          { backgroundPositionY: "50%" },
+          { backgroundPositionY: "60%", ease: "power2.inOut", duration: 2 },
           0
         );
     } else {
@@ -522,8 +577,8 @@ export default function gsapInit(isFormOpen) {
         )
         .fromTo(
           "body",
+          { backgroundPositionY: "60%" },
           { backgroundPositionY: "50%" },
-          { backgroundPositionY: "40%" },
           0
         );
     }
@@ -621,9 +676,7 @@ export default function gsapInit(isFormOpen) {
   }
 
   function deactivateHam() {
-    document
-      .querySelector(".nav-hamburger-menu")
-      .classList.remove("active");
+    document.querySelector(".nav-hamburger-menu").classList.remove("active");
 
     document.querySelectorAll(".line").forEach((line) => {
       line.classList.remove("active");
@@ -665,8 +718,14 @@ export default function gsapInit(isFormOpen) {
       (currentIndex === 5 && index === 4)
     ) {
       transition5(direction);
+    }else if (
+      (currentIndex === 5 && index === 6) ||
+      (currentIndex === 6 && index === 5)
+    ) {
+      transition6(direction);
     } else {
       generalTransition(index, direction);
+      console.log("generalTransition");
     }
     currentIndex = index;
   }
@@ -680,9 +739,11 @@ export default function gsapInit(isFormOpen) {
       type: "wheel,touch,pointer",
       wheelSpeed: -1,
       onDown: () =>
-      isHome && !animating && !isFormOpen && gotoSection(currentIndex - 1, -1),
+        !animating &&
+        !isFormOpen &&
+        gotoSection(currentIndex - 1, -1),
       onUp: () =>
-      isHome && !animating && !isFormOpen && gotoSection(currentIndex + 1, 1),
+        !animating && !isFormOpen && gotoSection(currentIndex + 1, 1),
       tolerance: 30,
       preventDefault: true,
     });
@@ -692,8 +753,7 @@ export default function gsapInit(isFormOpen) {
   document.querySelectorAll(".nav-home").forEach((nav) => {
     nav.addEventListener("click", () => {
       const index = 0;
-      if (currentIndex !== index && !animating)
-        gotoSection(index, -1);
+      if (currentIndex !== index && !animating) gotoSection(index, -1);
     });
   });
   document.querySelectorAll(".nav-perks").forEach((nav) => {
@@ -717,9 +777,16 @@ export default function gsapInit(isFormOpen) {
         gotoSection(index, currentIndex < index ? 1 : -1);
     });
   });
-  document.querySelectorAll(".nav-contact").forEach((nav) => {
+  document.querySelectorAll(".nav-faqs").forEach((nav) => {
     nav.addEventListener("click", () => {
       const index = 5;
+      if (currentIndex !== index && !animating)
+        gotoSection(index, currentIndex < index ? 1 : -1);
+    });
+  });
+  document.querySelectorAll(".nav-contact").forEach((nav) => {
+    nav.addEventListener("click", () => {
+      const index = 6;
       if (currentIndex !== index && !animating)
         gotoSection(index, currentIndex < index ? 1 : -1);
     });
