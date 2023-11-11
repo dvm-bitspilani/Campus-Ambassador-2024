@@ -670,7 +670,7 @@ export default function gsapInit(isFormOpen) {
       isHome && !animating && !isFormOpen && gotoSection(currentIndex - 1, -1),
       onUp: () =>
       isHome && !animating && !isFormOpen && gotoSection(currentIndex + 1, 1),
-      tolerance: 0,
+      tolerance: 30,
       preventDefault: true,
     });
   }
