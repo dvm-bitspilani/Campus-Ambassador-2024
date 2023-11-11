@@ -1,7 +1,7 @@
 import * as Yup from "yup";
 
 export const regSchema = Yup.object({
-    name: Yup.string().min(2, "Name must be contain atleast 2 characters").required("Please enter your name"),
+    name: Yup.string().required("Please enter your name"),
     email: Yup.string().email("Please enter a valid email").required("Please enter your email"),
     year: Yup.string().required("Please select your year of study").oneOf(['1', '2', '3', '4', '5'], 'Invalid Year of Study'),
     mobile: Yup.string()
