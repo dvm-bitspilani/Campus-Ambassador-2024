@@ -169,10 +169,12 @@
   }
   .home-register{
     padding: 4rem 2rem;
+    gap: 1rem;
   }
   .left-satellite{
     scale: .6;
     left: -30%;
+    top: -10%;
   }
   .right-satellite{
     scale: .6;
@@ -210,6 +212,5 @@
 @media (max-width: 400px) and (max-height: 750px) {
   .home-heading-wrapper{
     padding: 2rem 1rem;
-    margin-bottom: 2rem;
   }
 }
