@@ -12,32 +12,33 @@ import Contact from "./sections/Contact";
 
 import gsapInit from "./helpers/gsapTransitions";
 
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 import FAQs from "./sections/FAQs";
 
 function App() {
-
   // useref for gsap observer
   const mainObserver = useRef(null);
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   useEffect(() => {
-    mainObserver.current = gsapInit();
+    mainObserver.current = gsapInit(isFormOpen);
 
     return () => {
-      mainObserver.current.kill();
+      if (mainObserver.current !== null){
+        mainObserver.current.kill();
+      }
     };
-  }, []);
+  }, [isFormOpen]);
 
   return (
-    <motion.div 
-      initial={{opacity: 0, y: 100}}
-      animate={{opacity: 1, y: 0}}
-      exit={{opacity: 0, y: -100}}
-      transition={{duration: 1, ease: "easeInOut", delay: 0}}
+    <motion.div
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -100 }}
+      transition={{ duration: 1, ease: "easeInOut", delay: 0 }}
     >
       <Navbar />
-      <Home isFormOpen={isFormOpen} setIsFormOpen={setIsFormOpen}/>
+      <Home isFormOpen={isFormOpen} setIsFormOpen={setIsFormOpen} />
       <About />
       <Perks />
       <Responsibility />

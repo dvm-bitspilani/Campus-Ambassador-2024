@@ -1,11 +1,11 @@
 import gsap from "gsap";
 import { Observer } from "gsap/all";
 
-export default function gsapInit() {
+export default function gsapInit(isFormOpen) {
   gsap.registerPlugin(Observer);
 
   // console.log("isFormOpen (inside function) : ", isFormOpen);
-  let isFormOpen = false;
+  // let isFormOpen = false;
   let isHome = true;
 
   // let isHome = document.querySelector(".leaderboard-nav-leaderboard") === null;
@@ -16,26 +16,26 @@ export default function gsapInit() {
   //   });
   // }
 
-  document
-    .querySelector(".home-register-button")
-    .addEventListener("click", () => {
-      // On mouse down on .home-register-button, isFormOpen is set to true
-      isFormOpen = true;
+  // document
+  //   .querySelector(".home-register-button")
+  //   .addEventListener("click", () => {
+  //     // On mouse down on .home-register-button, isFormOpen is set to true
+  //     isFormOpen = true;
 
-      document
-        .querySelector(".home-register-button")
-        .removeEventListener("click", () => {
-          isFormOpen = true;
-        });
-      // On mouse down on .register-back button, isFormOpen is set to false
-      setTimeout(() => {
-        document
-          .querySelector(".register-back")
-          .addEventListener("click", () => {
-            isFormOpen = false;
-          });
-      }, 200);
-    });
+  //     document
+  //       .querySelector(".home-register-button")
+  //       .removeEventListener("click", () => {
+  //         isFormOpen = true;
+  //       });
+  //     // On mouse down on .register-back button, isFormOpen is set to false
+  //     setTimeout(() => {
+  //       document
+  //         .querySelector(".register-back")
+  //         .addEventListener("click", () => {
+  //           isFormOpen = false;
+  //         });
+  //     }, 200);
+  //   });
 
   const sections = document.querySelectorAll("section");
   const boxAnimatables1 = document.querySelectorAll(".perks-animatable1");
@@ -658,18 +658,22 @@ export default function gsapInit() {
     currentIndex = index;
   }
 
+  let mainObserver = null;
+
   // Observer
-  const mainObserver = Observer.create({
-    targets: "body",
-    type: "wheel,touch,pointer",
-    wheelSpeed: -1,
-    onDown: () =>
+  if (!isFormOpen) {
+    mainObserver = Observer.create({
+      targets: "body",
+      type: "wheel,touch,pointer",
+      wheelSpeed: -1,
+      onDown: () =>
       isHome && !animating && !isFormOpen && gotoSection(currentIndex - 1, -1),
-    onUp: () =>
+      onUp: () =>
       isHome && !animating && !isFormOpen && gotoSection(currentIndex + 1, 1),
-    tolerance: 50,
-    preventDefault: true,
-  });
+      tolerance: 0,
+      preventDefault: true,
+    });
+  }
 
   // On click of nav icons, goToSection is called
   document.querySelectorAll(".nav-home").forEach((nav) => {
