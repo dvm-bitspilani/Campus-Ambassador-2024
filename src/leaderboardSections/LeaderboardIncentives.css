@@ -40,6 +40,7 @@
   align-items: center;
 
   padding: 2rem;
+  flex-shrink: 0;
 
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -142,9 +143,6 @@
   .leaderboard-incentives-heading {
     margin-top: 5%;
   }
-  .leaderboard-incentives-container {
-    margin-top: 2rem;
-  }
 }
 
 @media screen and (max-width: 1300px) {
@@ -154,7 +152,8 @@
 }
 @media screen and (max-width: 760px) {
   .leaderboard-incentives-page {
-    /* justify-content: end; */
+    justify-content: end;
+    padding-bottom: 10%;
     gap: 1rem;
   }
   .leaderboard-incentives-container {
@@ -164,5 +163,28 @@
   }
   .leaderboard-incentives-heading span {
     font-size: 2.5rem;
+    border: none;
+  }
+}
+
+@media screen and (max-width : 800px){
+  .incentive-title{
+    font-size: 1.8rem;
+  }
+  .leaderboard-incentives-container li{
+    font-size: 1.2rem;
+  }
+  .leaderboard-incentives-container>span{
+    font-size: 1.2rem;
+  }
+  .incentives-disclaimer{
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (min-height : 660px){
+  .leaderboard-incentives-page{
+    justify-content: center;
+    padding: 0;
   }
 }
