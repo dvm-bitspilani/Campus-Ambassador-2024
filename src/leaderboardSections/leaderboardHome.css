@@ -95,13 +95,25 @@
 }
 @media (max-width : 760px){
     .leaderboard-home-wrapper{
+      max-width: 90%;
         width: 90%;
         height: 70%;
     }
     .leaderboard-home-heading span {
       font-size: 2rem;
+      border: none;
+    }
+    .leaderboard-home-wrapper {
+      margin-top: 1.5rem;
     }
 }
+
+@media screen and (max-width : 600px){
+  .leaderboard-home-item div{
+    font-size: 1.2rem;
+  }
+}
+
 @media screen and (max-height :760px) {
   .leaderboard-home-wrapper {
     margin-top: 1.5rem;
