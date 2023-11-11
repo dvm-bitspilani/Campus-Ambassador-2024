@@ -30,7 +30,7 @@ const Register = ({
       initialValues: initialValues,
       validationSchema: regSchema,
       onSubmit: async (values) => {
-        console.log(values);
+        // console.log(values);
 
         async function sendReg() {
           try {
@@ -46,7 +46,7 @@ const Register = ({
             );
 
             const data = await res.json();
-            console.log(data.message);
+            // console.log(data.message);
             setSuccess(true);
           } catch (error) {
             console.error("Error:", error.message);

@@ -1,0 +1,16 @@
+.faqs {
+  height: 100vh;
+  background: #1b1c20;
+  padding: 8rem 4rem 4rem 4rem;
+}
+.faqs-heading {
+  color: #71747b;
+  font-family: "Visby Bold";
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.faqs-container{
+    margin-top: 2rem;
+}

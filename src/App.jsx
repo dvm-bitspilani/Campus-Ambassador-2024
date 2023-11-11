@@ -13,6 +13,7 @@ import Contact from "./sections/Contact";
 import gsapInit from "./helpers/gsapTransitions";
 
 import {motion} from "framer-motion";
+import FAQs from "./sections/FAQs";
 
 function App() {
 
@@ -41,6 +42,7 @@ function App() {
       <Perks />
       <Responsibility />
       <Testimonials />
+      <FAQs />
       <Contact />
     </motion.div>
   );
