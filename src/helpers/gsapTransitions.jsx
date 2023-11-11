@@ -620,12 +620,25 @@ export default function gsapInit(isFormOpen) {
     }
   }
 
+  function deactivateHam() {
+    document
+      .querySelector(".nav-hamburger-menu")
+      .classList.remove("active");
+
+    document.querySelectorAll(".line").forEach((line) => {
+      line.classList.remove("active");
+    });
+  }
+
   function gotoSection(index, direction) {
     if (index < 0 || index >= sections.length || animating) return;
 
+    // Deactive Hamburger Menu
+    deactivateHam();
+
     animating = true;
 
-    console.log({ currentIndex, index, direction });
+    // console.log({ currentIndex, index, direction });
 
     if (
       (currentIndex === 0 && index === 1) ||

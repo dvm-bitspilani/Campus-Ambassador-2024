@@ -104,12 +104,24 @@ export default function gsapInit() {
     }
   }
 
+  function deactivateHam() {
+    document
+      .querySelector(".nav-hamburger-menu")
+      .classList.remove("active");
+
+    document.querySelectorAll(".line").forEach((line) => {
+      line.classList.remove("active");
+    });
+  }
+
   function gotoSection(index, direction) {
     if (index < 0 || index >= sections.length || animating) return;
 
+    deactivateHam();
+
     animating = true;
 
-    console.log({ currentIndex, index, direction });
+    // console.log({ currentIndex, index, direction });
 
     generalTransition(index, direction);
 
