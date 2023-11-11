@@ -161,6 +161,9 @@
     height: 65%;
     /* margin-bottom: 5%; */
   }
+  .leaderboard-incentives-container.not-incentives{
+    height: 75%;
+  }
   .leaderboard-incentives-heading span {
     font-size: 2.5rem;
     border: none;
@@ -180,9 +183,12 @@
   .incentives-disclaimer{
     font-size: 0.8rem;
   }
+  .leaderboard-incentives-heading{
+    margin-top: 5%;
+  }
 }
 
-@media screen and (min-height : 660px){
+@media screen and (min-height : 700px){
   .leaderboard-incentives-page{
     justify-content: center;
     padding: 0;

@@ -7,7 +7,7 @@ export default function LeaderboardResponsibilities() {
       <div className="leaderboard-incentives-heading">
         <span>Responsibilities</span>
       </div>
-      <div className="leaderboard-incentives-container">
+      <div className="leaderboard-incentives-container not-incentives">
         <h2 className="incentive-title">
           ENSURING MAXIMUM PARTICIPATION IN APOGEE 2024
         </h2>

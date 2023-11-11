@@ -7,7 +7,7 @@ export default function LeaderboardPoints() {
       <div className="leaderboard-incentives-heading">
         <span>Points Scheme</span>
       </div>
-      <div className="leaderboard-incentives-container">
+      <div className="leaderboard-incentives-container not-incentives">
         <ol>
           <li>
             Registration = <span>100</span> points per participant per event
