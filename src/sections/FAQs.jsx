@@ -29,6 +29,18 @@ const AccordionSummary = styled((props) => (
   "& .MuiAccordionSummary-content": {
     marginLeft: theme.spacing(1),
   },
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "1.25rem",
+  },
+  [theme.breakpoints.down("sx")]: {
+    fontSize: "1rem",
+  },
+  "@media screen and (max-width: 450px)": {
+    fontSize: "1rem",
+  },
+  "@media screen and (max-width: 450px) and (max-height: 710px)": {
+    fontSize: ".75rem",
+  }
 }));
 
 const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
@@ -42,6 +54,15 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
     fontSize: "1rem",
   },
+  [theme.breakpoints.down("sx")]: {
+    fontSize: ".75rem",
+  },
+  "@media screen and (max-width: 450px)": {
+    fontSize: ".75rem",
+  },
+  "@media screen and (max-width: 450px) and (max-height: 710px)": {
+    fontSize: ".5rem",
+  }
 }));
 
 const FAQs = () => {

@@ -13,4 +13,22 @@
 }
 .faqs-container{
     margin-top: 2rem;
+    height: 75vh;
+    overflow-y: scroll;
+}
+@media(max-width: 600px){
+  .faqs-heading{
+    font-size: 2rem;
+  }
+}
+@media(max-width: 450px){
+  .faqs{
+    padding: 8rem 2rem 2rem 2rem;
+  }
+  .faqs-container{
+    margin-top: 1rem;
+  }
+  .faqs-heading{
+    font-size: 1.5rem;
+  }
 }
