@@ -2,13 +2,14 @@
 import "./About.css";
 import Mars from '../../public/mars.png'
 import Rover from "../../public/rover.png"
+import Apogee from "../../public/apogee-logo.svg"
 
 const About = () => {
   return (
     <section className="about">
       <div className="about-content">
         <div className="about-heading">
-          <img src="/apogee-logo.svg" alt="logo" />
+          <img src={Apogee} alt="logo" />
           <h1>
             WHAT IS <span>APOGEE?</span>
           </h1>

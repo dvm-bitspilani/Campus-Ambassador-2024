@@ -3,6 +3,7 @@ import "./Home.css";
 import SpaceStation from "../../public/SpaceStation.png";
 import LeftSatellite from "../../public/LeftSatellite.png";
 import RightSatellite from "../../public/RightSatellite.png";
+import Apogee from '../../public/apogee-logo.svg'
 import {
   // easeIn,
   easeInOut,
@@ -54,7 +55,7 @@ const Home = ({ isFormOpen, setIsFormOpen }) => {
         className="home-heading-wrapper"
       >
         <div className="home-logo">
-          <img src="/apogee-logo.svg" alt="logo" />
+          <img src={Apogee} alt="logo" />
         </div>
         <div className="home-heading">
           <span className="home-heading-text">Campus</span> <br />
