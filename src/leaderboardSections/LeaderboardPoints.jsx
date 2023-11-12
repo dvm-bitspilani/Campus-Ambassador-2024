@@ -16,7 +16,7 @@ export default function LeaderboardPoints() {
           </li>
           <li>Social Media Posts Publicity</li>
           <div className="social-container">
-            <img src="/icons/fb.png" alt="fb" />
+            <img src="/icons/fb.svg" alt="fb" />
             <div className="social-points-container">
               <p className="social-points-p">
                 Sharing Posts = <span>50</span> points per post
@@ -30,7 +30,7 @@ export default function LeaderboardPoints() {
             </div>
           </div>
           <div className="social-container">
-            <img src="/icons/instagram.png" alt="instagram" />
+            <img src="/icons/ig.svg" alt="instagram" />
             <div className="social-points-container">
               <p className="social-points-p">
                 Sharing Stories = <span>50</span> points per story
@@ -41,7 +41,7 @@ export default function LeaderboardPoints() {
             </div>
           </div>
           <div className="social-container">
-            <img src="/icons/whatsapp.jpg" alt="fb" />
+            <img src="/icons/whatsapp.svg" alt="fb" />
             <div className="social-points-container">
               <p className="social-points-p">
                 Sharing Story = <span>50</span> points per story
