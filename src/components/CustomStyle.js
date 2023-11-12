@@ -16,6 +16,9 @@ export default function CustomStyles() {
             color: "#fff",
             fontFamily: "Visby Light",
             fontSize: "1.5rem",
+            "@media screen and (max-width: 1300px)": {
+              fontSize: "1.15rem",
+            }
           }),
       
         control: (provided, state) => ({
@@ -44,6 +47,9 @@ export default function CustomStyles() {
               backgroundColor: "#7855ef",
               color: "#fff",
             },
+            "@media screen and (max-width: 1300px)": {
+              fontSize: "1rem",
+            }
           }),  
           menu: (provided) => ({
             ...provided,
@@ -82,6 +88,12 @@ export default function CustomStyles() {
             opacity: "1",
             color: "rgba(255, 255, 255, 0.6)",
             opacity: state.isFocused ? "0" : "1",
+            "@media screen and (max-width: 1300px)": {
+              fontSize: "1rem",
+            },
+            "@media screen and (max-width: 850px)": {
+              fontSize: ".75rem",
+            }
           }),
           container: (provided) => ({
             ...provided,

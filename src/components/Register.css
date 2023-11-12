@@ -23,7 +23,7 @@
   height: 100%;
   width: 100%;
   padding: 3rem 10rem 0 6rem;
-  height: 80%;
+  height: 85%;
   overflow-y: scroll;
 }
 .input-block,
@@ -73,7 +73,7 @@
   border-bottom: 1px solid #959da5;
 }
 .year-of-study {
-  width: 70%;
+  width: 100%;
 }
 .year-of-study input[type="radio"] {
   display: none;
@@ -121,5 +121,85 @@
   .register-form button {
     font-size: 1.25rem;
     padding: 0.75rem 2rem;
+  }
+}
+@media(max-width: 1300px){
+  .input-block{
+    margin-bottom: .75rem;
+  }
+  .input-block input[type="text"]{
+    font-size: 1.25rem;
+  }
+  .year-of-study input[type="radio"] + label{
+    padding: 2px 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+  }
+  .input-label{
+    font-size: 1.25rem;
+  }
+  .info-source-select{
+    font-size: 1rem;
+  }
+  .input-field p, .info-field p{
+    font-size: .85rem;
+  }
+}
+@media (max-width: 1010px) and (min-height: 950px){
+  .register-form{
+    padding: 6rem 4rem 0 4rem;
+  }
+  .input-label{
+    font-size: 1rem;
+  }
+}
+@media (max-width: 950px) {
+  .register-form{
+    padding: 6rem 4rem 0 4rem;
+  }
+  .input-label{
+    font-size: 1rem;
+  }
+}
+@media (max-width: 670px) {
+  .input-block{
+    flex-direction: column;
+  }
+
+  .info-field, .input-block{
+    text-align: center;
+  }
+  .input-field{
+    width: 100%;
+  }
+  .info-field input[type="text"], .input-field input[type="text"]{
+    text-align: center;
+  }
+}
+@media (max-width: 510px){
+  .register-form{
+    padding: 6rem 2rem 0 2rem;
+  }
+}
+@media (max-width: 420px) {
+  .input-block{
+    margin-bottom: .75rem;
+  }
+  .input-block input[type="text"]{
+    font-size: 1rem;
+  }
+  .year-of-study input[type="radio"] + label{
+    padding: 2px .65rem;
+    font-size: 1rem;
+    border-radius: 5px;
+  }
+  .input-label{
+    font-size: 1rem;
+  }
+  .info-source-select{
+    font-size: 1rem;
+  }
+  .input-field p, .info-field p{
+    font-size: .5rem;
   }
 }
