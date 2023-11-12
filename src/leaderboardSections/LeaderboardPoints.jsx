@@ -1,4 +1,7 @@
 import "./LeaderboardIncentives.css";
+import WA from "../../public/icons/whatsapp.svg"
+import FB from "../../public/icons/fb.svg"
+import Insta from "../../public/icons/ig.svg"
 
 export default function LeaderboardPoints() {
   return (
@@ -16,7 +19,7 @@ export default function LeaderboardPoints() {
           </li>
           <li>Social Media Posts Publicity</li>
           <div className="social-container">
-            <img src="/icons/fb.svg" alt="fb" />
+            <img src={FB} alt="fb" />
             <div className="social-points-container">
               <p className="social-points-p">
                 Sharing Posts = <span>50</span> points per post
@@ -30,7 +33,7 @@ export default function LeaderboardPoints() {
             </div>
           </div>
           <div className="social-container">
-            <img src="/icons/ig.svg" alt="instagram" />
+            <img src={Insta} alt="instagram" />
             <div className="social-points-container">
               <p className="social-points-p">
                 Sharing Stories = <span>50</span> points per story
@@ -41,7 +44,7 @@ export default function LeaderboardPoints() {
             </div>
           </div>
           <div className="social-container">
-            <img src="/icons/whatsapp.svg" alt="fb" />
+            <img src={WA} alt="fb" />
             <div className="social-points-container">
               <p className="social-points-p">
                 Sharing Story = <span>50</span> points per story
