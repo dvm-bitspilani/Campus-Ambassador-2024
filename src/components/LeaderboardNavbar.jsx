@@ -29,7 +29,7 @@ const Navbar = () => {
     <>
       <div className="navbar leaderboard-navbar">
         <HamburgerMenu />
-        <Link to="/" className="nav-heading">
+        <Link to="/" className="nav-heading" onClick={handleLeaderboard}>
           APOGEE &apos;24
         </Link>
         <ul className="nav-tabs">

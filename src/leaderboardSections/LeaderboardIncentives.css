@@ -47,7 +47,7 @@
 }
 
 .leaderboard-incentives-container::-webkit-scrollbar-track {
-  background: var(--primary-black);
+  background: transparent;
 }
 .leaderboard-incentives-container::-webkit-scrollbar-thumb {
   background-color: #fafafa;

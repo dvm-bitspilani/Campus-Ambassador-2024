@@ -749,6 +749,14 @@ export default function gsapInit(isFormOpen) {
     });
   }
 
+
+  // Clicking on apogee logo also brings to the top
+  document.querySelectorAll(".nav-heading").forEach((logo) => {
+    logo.addEventListener("click", () => {
+      if (currentIndex !== 0 && !animating) gotoSection(0, -1);
+    });
+  });
+
   // On click of nav icons, goToSection is called
   document.querySelectorAll(".nav-home").forEach((nav) => {
     nav.addEventListener("click", () => {
