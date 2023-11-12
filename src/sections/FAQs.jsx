@@ -39,7 +39,7 @@ const AccordionSummary = styled((props) => (
     fontSize: "1rem",
   },
   "@media screen and (max-width: 450px) and (max-height: 710px)": {
-    fontSize: ".75rem",
+    fontSize: ".8rem",
   }
 }));
 
@@ -61,7 +61,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
     fontSize: ".75rem",
   },
   "@media screen and (max-width: 450px) and (max-height: 710px)": {
-    fontSize: ".5rem",
+    fontSize: ".7rem",
   }
 }));
 
