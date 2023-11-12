@@ -21,7 +21,7 @@
 .about-heading>img{
   position: absolute;
   left: -1rem;
-  top: 0;
+  top: -2rem;
   z-index: -1;
 
   transform: translate(-100%) scale(0.5);
@@ -61,4 +61,74 @@
     font-size: 1.25rem;
     line-height: 30px;
   }
+}
+@media(max-width: 1100px){
+  .about-rover{
+    right: 25vw;
+  }
+}
+@media(max-width: 850px){
+  .about-rover{
+    right: 50vw;
+  }
+}
+@media (max-width: 720px) {
+  .about-heading h1{
+    font-size: 2.5rem;
+  }
+  .about-heading>img{
+    scale: .8;
+    left: -5rem;
+  }
+  
+  .about-rover{
+    scale: .6;
+    right: 65vw;
+  }
+  .about-surface{
+    bottom: -100px;
+    
+  }
+}
+@media(max-width: 600px){
+  .about-rover{
+    right: 100vw;
+  }
+  .about-heading h1{
+    font-size: 1.75rem;
+  }
+  .about-heading>img{
+    scale: .6;
+    left: -8rem;
+  }
+}
+@media (max-width: 500px) {
+  .about-rover{
+    scale: .4;
+    right: 120vw;
+  }
+  .about-heading>img{
+    scale: .4;
+    left: -11rem;
+    top: -.5rem;
+  }
+}
+@media (max-width: 420px) {
+  .about-heading h1{
+    font-size: 1.25rem;
+  }
+  .about-content{
+    margin-top: -5rem;
+  }
+  .about-desc{
+    line-height: 25px;
+  }
+}
+@media (max-height: 730px) and (max-width: 400px) {
+  .about-desc{
+    line-height: 20px;
+    font-size: .75rem;
+  }
+  
+
 }
