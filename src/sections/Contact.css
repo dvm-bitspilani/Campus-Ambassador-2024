@@ -56,6 +56,9 @@
   text-decoration-line: underline;
   cursor: pointer;
 }
+.tech-mail{
+  margin-bottom: 2.5rem;
+}
 @media (max-width: 1300px) {
   .contact-heading span {
     font-size: 3.5rem;
