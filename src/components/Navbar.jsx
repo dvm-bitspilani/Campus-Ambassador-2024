@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import "./Navbar.css";
+import Apogee from "../../public/apogee-heading.png";
 
 const Navbar = () => {
   const handleLeaderboard = () => {
@@ -19,7 +20,8 @@ const Navbar = () => {
     <div className="navbar">
       <HamburgerMenu />
       <Link to="/" className="nav-heading">
-        APOGEE &apos;24
+        <span> APOGEE &apos;24</span>
+        <img src={Apogee} alt="APOGEE '24" />
       </Link>
       <ul className="nav-tabs">
         <li className="nav-home">Home</li>

@@ -20,6 +20,16 @@
   color: white;
   flex-shrink: 0;
 }
+.nav-heading img{
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  pointer-events: none;
+}
+.nav-heading span{
+  opacity: 0;
+  padding: 3rem;
+}
 .nav-tabs {
   display: flex;
   align-items: center;
@@ -162,6 +172,11 @@
         gap: 1rem;
         font-size: 1.15rem;
     }
+    .nav-heading img{
+      scale: .8;
+      top: -3rem;
+      left: -3rem;
+    }
     .leaderboard{
         padding: .5rem 1.25rem;
     }
@@ -201,5 +216,10 @@
 @media screen and (max-width : 600px){
   .nav-hamburger-menu{
     width: 70%;
+  }
+  .nav-heading img{
+    scale: .65;
+    top: -4.25rem;
+    left: -5rem;
   }
 }
