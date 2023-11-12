@@ -201,8 +201,9 @@
     /* margin-bottom: 2rem; */
   }
   .social-container img{
-    height: 80px;
+    height: 60px;
     aspect-ratio: 1/1;
+    align-self: center;
   }
   .social-points-p{
     font-size: 1.1rem;
