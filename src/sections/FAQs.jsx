@@ -47,7 +47,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   padding: theme.spacing(2),
   backgroundColor: "#1b1c20",
   color: "#B5B8BF",
-  fontFamily: "Visby Thin", 
+  fontFamily: "Visby Semibold", 
   fontSize: "1.25rem",
   paddingTop: "1rem",
   paddingBottom: "1rem",
