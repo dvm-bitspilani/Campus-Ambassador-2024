@@ -71,7 +71,7 @@ const Testimonials = () => {
                     onDragEnd={(_, dragInfo) => dragEndHandler(dragInfo)}
                     className="image"
                   >
-                    {window.innerWidth > 1100 ? (
+                    {typeof window !== "undefined" ? window.innerWidth > 1100 ? (
                       <CarouselBox
                         image={DATA[activeImageIndex].image}
                         name={DATA[activeImageIndex].name}
@@ -84,7 +84,7 @@ const Testimonials = () => {
                         name={DATA[activeImageIndex].name}
                         desc={DATA[activeImageIndex].desc}
                       ></MobileTestimonials>
-                    )}
+                    ) : null}
                   </motion.div>
                 </AnimatePresence>
               </div>

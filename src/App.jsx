@@ -41,8 +41,8 @@ function App() {
       <Navbar />
       <Home isFormOpen={isFormOpen} setIsFormOpen={setIsFormOpen} />
       <About />
-      {window.innerWidth > 1100 ? <Perks /> : <MobilePerks section="perks" />}
-      {window.innerWidth > 1100 ? <Responsibility /> : <MobilePerks section="responsibility" />}
+      {typeof window !== "undefined" ? window.innerWidth > 1100 ? <Perks /> : <MobilePerks section="perks" /> : null}
+      {typeof window !== "undefined" ? window.innerWidth > 1100 ? <Responsibility /> : <MobilePerks section="responsibility" />: null}
       <Testimonials />
       <FAQs />
       <Contact />
