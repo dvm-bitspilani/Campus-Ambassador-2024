@@ -12,6 +12,9 @@
     text-align: center;
     width: 100%;
 }
+.rewards-slider{
+  height: 35vh;
+}
 .rewards-slider > div {
     display: flex;
     justify-content: center;

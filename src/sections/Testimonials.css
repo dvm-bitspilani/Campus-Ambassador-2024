@@ -124,6 +124,7 @@
 @media (max-width: 1100px){
     .slider{
         min-width: 60vw;
+        height: 45vh;
     }
     .buttons{
         bottom: -70%;

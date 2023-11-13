@@ -49,6 +49,11 @@
 .contact-mail a {
   text-decoration: none;
 }
+.contact a:link,
+.contact-mail a:link{
+  text-decoration: none;
+  color: #959DA5;
+}
 .contact-desc {
   color: var(--primary-purple);
   font-family: "Visby Light";
