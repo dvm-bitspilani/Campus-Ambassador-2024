@@ -20,6 +20,7 @@
 .test-header{
     overflow: hidden;
     position: relative;
+    text-align: center;
 }
 
 .testimonials-container{

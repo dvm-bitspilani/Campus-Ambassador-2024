@@ -14,6 +14,7 @@ import gsapInit from "./helpers/gsapTransitions";
 
 import { motion } from "framer-motion";
 import FAQs from "./sections/FAQs";
+import MobilePerks from "./sections/MobilePerks";
 
 function App() {
   // useref for gsap observer
@@ -40,8 +41,8 @@ function App() {
       <Navbar />
       <Home isFormOpen={isFormOpen} setIsFormOpen={setIsFormOpen} />
       <About />
-      <Perks />
-      <Responsibility />
+      {window.innerWidth > 1100 ? <Perks /> : <MobilePerks section="perks" />}
+      {window.innerWidth > 1100 ? <Responsibility /> : <MobilePerks section="responsibility" />}
       <Testimonials />
       <FAQs />
       <Contact />

@@ -1,12 +1,12 @@
 import React from "react";
-import './MobileTestimonials.css'
+import "./MobileTestimonials.css";
 
-const MobileTestimonials = ({ image, name, desc }) => {
+const MobileTestimonials = ({ image, name, desc, type }) => {
   return (
     <div className="mobile-carousel-box">
       <div className="mobile-carousel-box-image">
-        <img src={image} alt="" />
-        <span className="mcb-content-heading">{name}</span>
+        {image ? <img src={image} alt="" /> : null}
+        <span className={type === "test" ? "mcb-content-heading" : "mcb-rewards"}>{name}</span>
       </div>
       <div className="mobile-carousel-box-content">
         <div className="mcb-content-desc">{desc}</div>

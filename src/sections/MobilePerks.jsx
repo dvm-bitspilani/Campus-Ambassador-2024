@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import "./Testimonials.css";
+import "./MobilePerks.css";
 import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "@popmotion/popcorn";
 import LeftArrowImage from "../../public/Left.svg";
 import RightArrowImage from "../../public/Right.svg";
-import CarouselBox from "../components/CarouselBox";
 import MobileTestimonials from "../components/MobileTestimonials";
-import { DATA } from "../components/data";
+import { DATA } from "../components/rewards";
+import { RESPONSIBILITIES } from "../components/responsibilities";
 
 const sliderVariants = {
   incoming: (direction) => ({
@@ -27,7 +27,7 @@ const sliderTransition = {
   ease: [0.56, 0.03, 0.12, 1.04],
 };
 
-const Testimonials = () => {
+const MobilePerks = ({ section }) => {
   const [[imageCount, direction], setImageCount] = useState([0, 0]);
 
   const activeImageIndex = wrap(0, DATA.length, imageCount);
@@ -45,17 +45,20 @@ const Testimonials = () => {
       swipeToImage(1);
     }
   };
-
   return (
-    <section className="testimonials">
+    <section className="mobile-perks">
       <div className="testimonials-container">
         <div className="test-header">
-          <h1>Testimonials</h1>
+          <h1>
+            {section === "perks"
+              ? "REWARDS AND INCENTIVES"
+              : "RESPONSIBILITIES"}
+          </h1>
         </div>
         <div className="test-carousel">
           <div className="carousel">
             <div className="sliderContainer">
-              <div className="slider">
+              <div className="slider rewards-slider">
                 <AnimatePresence initial={false} custom={direction}>
                   <motion.div
                     key={imageCount}
@@ -71,18 +74,17 @@ const Testimonials = () => {
                     onDragEnd={(_, dragInfo) => dragEndHandler(dragInfo)}
                     className="image"
                   >
-                    {window.innerWidth > 1100 ? (
-                      <CarouselBox
-                        image={DATA[activeImageIndex].image}
+                    {section === "perks" ? (
+                      <MobileTestimonials
+                        type="rewards"
                         name={DATA[activeImageIndex].name}
                         desc={DATA[activeImageIndex].desc}
-                      ></CarouselBox>
+                      ></MobileTestimonials>
                     ) : (
                       <MobileTestimonials
-                        type="test"
-                        image={DATA[activeImageIndex].mobile}
-                        name={DATA[activeImageIndex].name}
-                        desc={DATA[activeImageIndex].desc}
+                        type="rewards"
+                        name={RESPONSIBILITIES[activeImageIndex].name}
+                        desc={RESPONSIBILITIES[activeImageIndex].desc}
                       ></MobileTestimonials>
                     )}
                   </motion.div>
@@ -98,23 +100,6 @@ const Testimonials = () => {
                 </button>
               </div>
             </div>
-
-            {/* <div className="thumbnails">
-        {DATA.map(image => (
-          <div
-            key={image.id}
-            onClick={() => skipToImage(image.id)}
-            className="thumbnailContainer"
-          >
-            <img src={image.DATArc} alt="Musician" />
-            <div
-              className={`$"activeIndicator" ${
-                image.id === activeImageIndex ? carousel["active"] : null
-              }`}
-            />
-          </div>
-        ))}
-      </div> */}
           </div>
         </div>
       </div>
@@ -122,4 +107,4 @@ const Testimonials = () => {
   );
 };
 
-export default Testimonials;
+export default MobilePerks;
