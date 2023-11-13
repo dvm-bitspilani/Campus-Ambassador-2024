@@ -120,10 +120,13 @@
 .thumbnails .thumbnailContainer .activeIndicator.active {
     transform: scaleX(1);
 }
-@media (min-height: 1000px){
+@media (max-width: 1100px){
     .slider{
-        /* height: 300px; */
-        /* width: 450px; */
+        width: 60vw;
+    }
+    .buttons{
+        bottom: -70%;
+        width: 60%;
     }
     
 }
@@ -134,16 +137,35 @@
     }
     
 }
-@media(max-width: 450px){
-    
-}
-@media(max-width: 400px){
+@media(max-width: 780px){
     .slider{
-        /* width: 275px; */
-        /* height: 190px; */
+        width: 75vw;
+    }
+    .sliderContainer{
+        margin: 0;
+    }
+    .test-header{
+        margin-top: -2rem;
+    }
+    .buttons{
+        bottom: -80%;
     }
 }
-@media(max-height: 720px){
+@media(max-width: 660px){
+    .slider{
+        width: 80vw;
+    }
+    .test-header h1{
+        font-size: 2.75rem;
+    }
+    .test-header{
+        margin-top: -6rem;
+    }
+}
+@media(max-width: 400px){
+    .test-header h1{
+        font-size: 2.25rem;
+    }
     .sliderContainer{
         /* margin: 15px 0; */
     }
@@ -152,7 +174,7 @@
         height: 25vh; */
     }
     .buttons{
-        /* width: 40%; */
+        bottom: -100%;
     }
 }
 @media(max-height: 600px){

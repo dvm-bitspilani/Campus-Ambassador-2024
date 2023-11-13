@@ -4,9 +4,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "@popmotion/popcorn";
 import LeftArrowImage from "../../public/Left.svg";
 import RightArrowImage from "../../public/Right.svg";
-import CarouselBox from "./CarouselBox";
-
-import { DATA } from "./data";
+import CarouselBox from "../components/CarouselBox";
+import MobileTestimonials from "../components/MobileTestimonials";
+import { DATA } from "../components/data";
 
 const sliderVariants = {
   incoming: (direction) => ({
@@ -71,11 +71,19 @@ const Testimonials = () => {
                     onDragEnd={(_, dragInfo) => dragEndHandler(dragInfo)}
                     className="image"
                   >
-                    <CarouselBox
-                      image={DATA[activeImageIndex].image}
-                      name={DATA[activeImageIndex].name}
-                      desc={DATA[activeImageIndex].desc}
-                    ></CarouselBox>
+                    {window.innerWidth > 1100 ? (
+                      <CarouselBox
+                        image={DATA[activeImageIndex].image}
+                        name={DATA[activeImageIndex].name}
+                        desc={DATA[activeImageIndex].desc}
+                      ></CarouselBox>
+                    ) : (
+                      <MobileTestimonials
+                        image={DATA[activeImageIndex].mobile}
+                        name={DATA[activeImageIndex].name}
+                        desc={DATA[activeImageIndex].desc}
+                      ></MobileTestimonials>
+                    )}
                   </motion.div>
                 </AnimatePresence>
               </div>

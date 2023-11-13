@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import Apogee from "../../public/apogee-heading.png";
+
 
 import gsap from "gsap";
 import React from "react";
@@ -20,9 +22,7 @@ const Navbar = () => {
     });
 
     // Menu Animation
-    document
-      .querySelector(".nav-hamburger-menu")
-      .classList.toggle("active");
+    document.querySelector(".nav-hamburger-menu").classList.toggle("active");
   };
 
   return (
@@ -30,7 +30,8 @@ const Navbar = () => {
       <div className="navbar leaderboard-navbar">
         <HamburgerMenu />
         <Link to="/" className="nav-heading" onClick={handleLeaderboard}>
-          APOGEE &apos;24
+          <span> APOGEE &apos;24</span>
+          <img src={Apogee} alt="APOGEE '24" />
         </Link>
         <ul className="nav-tabs">
           <li className="leaderboard-nav-leaderboard">Leaderboard</li>
