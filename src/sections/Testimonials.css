@@ -122,7 +122,7 @@
 }
 @media (max-width: 1100px){
     .slider{
-        width: 60vw;
+        min-width: 60vw;
     }
     .buttons{
         bottom: -70%;
@@ -139,10 +139,10 @@
 }
 @media(max-width: 780px){
     .slider{
-        width: 75vw;
+        min-width: 75vw;
     }
     .sliderContainer{
-        margin: 0;
+        /* margin: 0; */
     }
     .test-header{
         margin-top: -2rem;
@@ -153,13 +153,13 @@
 }
 @media(max-width: 660px){
     .slider{
-        width: 80vw;
+        min-width: 100vw;
     }
     .test-header h1{
         font-size: 2.75rem;
     }
     .test-header{
-        margin-top: -6rem;
+        margin-top: -4rem;
     }
 }
 @media(max-width: 400px){
