@@ -44,7 +44,7 @@ const Perks = () => {
                 </div>
               </div>
             </div>
-            <div className="perks-left-bottom-2 perks-animatable1">
+            {/* <div className="perks-left-bottom-2 perks-animatable1">
               <div className="perks-box">
                 <div className="perks-box-heading">Free Coupons</div>
                 <div className="perks-box-desc">
@@ -52,7 +52,7 @@ const Perks = () => {
                   2 tasks will be provided.
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="perks-right">
