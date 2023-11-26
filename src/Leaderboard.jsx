@@ -14,10 +14,6 @@ export default function Leaderboard() {
 
   React.useEffect(() => {
     gsapInit();
-
-    return () => {
-      // window.location.reload();
-    }
   }, [])
 
   return (<motion.div
