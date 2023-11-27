@@ -44,6 +44,17 @@ const Contact = () => {
           </div>
         )}
         {tech ? (
+          <>
+          <div className="contact-info">
+            <div className="contact-info-name">Shreyas Gantayet</div>
+            <div className="contact-info-desc">
+              <div className="contact-mail tech-mail">
+                <a href="mailto:f20220622@pilani.bits-pilani.ac.in">
+                  f20220598@pilani.bits-pilani.ac.in
+                </a>
+              </div>
+            </div>
+          </div>
           <div className="contact-info">
             <div className="contact-info-name">Luv Gupta</div>
             <div className="contact-info-desc">
@@ -54,6 +65,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
+          </>
         ) : (
           <div className="contact-info">
             <div className="contact-info-name">Keya Shah</div>
