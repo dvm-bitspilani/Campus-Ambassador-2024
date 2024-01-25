@@ -35,14 +35,14 @@ const Register = ({
         async function sendReg() {
           try {
             const res = await fetch(
-              "https://bits-apogee.org/collegeambassador/register",
+              "https://bits-apogee.org/2024/main/collegeambassador/register",
               {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
                 },
                 body: JSON.stringify(values),
-              }
+              },
             );
 
             const data = await res.json();
@@ -104,7 +104,7 @@ const Register = ({
     setColleges(
       collegesData["data"].map((item) => {
         return { value: item.id, label: item.name };
-      })
+      }),
     );
   }, []);
 
@@ -161,7 +161,7 @@ const Register = ({
                 placeholder="Choose your College"
                 name="college"
                 value={colleges.find(
-                  (option) => option.value === values.college
+                  (option) => option.value === values.college,
                 )}
                 onChange={(selectedOption) => {
                   let event = {
@@ -278,7 +278,7 @@ const Register = ({
                 styles={customStyleArray[0]}
                 placeholder="How did you come to know about Campus Ambassador Programme?"
                 value={infoSources.find(
-                  (option) => option.label === values.info_source
+                  (option) => option.label === values.info_source,
                 )}
                 onChange={(option) => {
                   handleChange("info_source")(option.label);

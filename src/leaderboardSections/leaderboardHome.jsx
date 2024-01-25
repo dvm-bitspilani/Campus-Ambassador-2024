@@ -10,7 +10,7 @@ export default function LeaderboardHome() {
   React.useEffect(() => {
     async function fetchData() {
       const response = await fetch(
-        "https://bits-apogee.org/collegeambassador/leaderboard"
+        "https://bits-apogee.org/2024/main/collegeambassador/leaderboard",
       );
       const data = await response.json();
       setLeaderboard(data.data);
@@ -35,7 +35,12 @@ export default function LeaderboardHome() {
       </div>
       <div className="leaderboard-home-wrapper">
         {leaderboardList.length && (
-          <motion.div className="leaderboard-home-container" initial={{scale : 0}} animate={{scale : 1}} transition={{duration : 0.5}}>
+          <motion.div
+            className="leaderboard-home-container"
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.5 }}
+          >
             {leaderboardList}
           </motion.div>
         )}
